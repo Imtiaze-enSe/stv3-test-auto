@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-11-02T18:32:15.390817" rpa="false" schemaversion="5">
+<suite id="s1" name="Upload Users documents" source="C:\Users\SafetyTracker\tests\Upload_Users_documents.robot">
+<kw name="Open Browser To Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:15.661589" level="INFO">Opening browser 'chrome' to base url 'https://stv3ca-prod.netlify.app/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-02T18:32:15.660628" elapsed="4.989660"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-02T18:32:20.651292" elapsed="0.061633"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-11-02T18:32:20.713926" elapsed="0.003023"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-11-02T18:32:20.716949" elapsed="0.000979"/>
+</kw>
+<doc>Opens the browser and sets up Selenium</doc>
+<status status="PASS" start="2024-11-02T18:32:15.659572" elapsed="5.058356"/>
+</kw>
+<test id="s1-t1" name="Upload Document For A User" line="12">
+<kw name="Navigate to users page" owner="UploadUserDocHelpers">
+<kw name="Login To Application" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_FORM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:20.719927" elapsed="0.249150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:20.969077" elapsed="0.249550"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:21.219616" level="INFO">Typing text 'supadmin@imense.net' into text field 'xpath=//input[@id="Enter your email address"]'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:21.218627" elapsed="0.578676"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:21.799332" level="INFO">Typing password into text field 'xpath=//input[@id="Enter your password"]'.</msg>
+<msg time="2024-11-02T18:32:22.142353" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:21.798348" elapsed="0.605181"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:22.404537" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:22.404537" elapsed="0.374072"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${LOADING_SPINNER}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:22.778609" elapsed="10.147121"/>
+</kw>
+<kw name="Wait Until Location Is" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:33.046401" level="INFO">Current location is 'https://stv3ca-prod.netlify.app/instant-observations?date=this_week'.</msg>
+<arg>${expected_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-11-02T18:32:32.928086" elapsed="0.118856"/>
+</kw>
+<arg>${TIMEOUT}</arg>
+<arg>1s</arg>
+<arg>Location Should Be</arg>
+<arg>${expected_url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-11-02T18:32:32.927031" elapsed="0.119911"/>
+</kw>
+<arg>${DASHBOARD_URL}</arg>
+<status status="PASS" start="2024-11-02T18:32:32.925730" elapsed="0.121212"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Performs login with given credentials</doc>
+<status status="PASS" start="2024-11-02T18:32:20.718925" elapsed="12.329043"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIDEBAR_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:33.047968" elapsed="0.266239"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:33.315911" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]'.</msg>
+<arg>${SIDEBAR_ELEMENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:33.314819" elapsed="0.296230"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERS_SIDEBAR_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:33.611558" elapsed="0.238851"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:33.850915" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[1]'.</msg>
+<arg>${USERS_SIDEBAR_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:33.850915" elapsed="0.366748"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERS_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:34.218718" elapsed="0.226480"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:34.445812" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]'.</msg>
+<arg>${SIDEBAR_CROSS_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:34.445812" elapsed="0.263127"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2024-11-02T18:32:20.718925" elapsed="13.991039"/>
+</kw>
+<kw name="Select a User From the List" owner="UploadUserDocHelpers">
+<kw name="Search for a User" owner="UploadUserDocHelpers">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:34.712984" level="INFO">Typing text 'Colten GREENFIELD' into text field 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/form[1]/div[1]/div[1]/input[1]'.</msg>
+<arg>${USERS_SEARCH_BAR}</arg>
+<arg>${searched_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:34.711972" elapsed="0.607498"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:35.320493" level="INFO">Clicking element 'xpath=//form[1]/div[1]/div[6]/button[1]'.</msg>
+<arg>${APLLY_SEARCH_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:35.319470" elapsed="0.351700"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${searched_user}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:35.671170" elapsed="1.039617"/>
+</kw>
+<arg>${USERS_SEARCH_BAR}</arg>
+<arg>${user_name}</arg>
+<status status="PASS" start="2024-11-02T18:32:34.711972" elapsed="1.999359"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:36.712370" level="INFO">Clicking element 'xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'Colten GREENFIELD')]'.</msg>
+<arg>xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${user_name}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:36.711331" elapsed="0.339237"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USER_PROFILE_TAB}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-02T18:32:37.050568" elapsed="0.904983"/>
+</kw>
+<arg>${USERS_SEARCH_BAR}</arg>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2024-11-02T18:32:34.709964" elapsed="3.245587"/>
+</kw>
+<kw name="Go to Required Document Page" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REQUIRED_DOC_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:37.956560" elapsed="0.280090"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:38.237175" level="INFO">Clicking element 'xpath=//span[contains(text(),'Required documents')]'.</msg>
+<arg>${REQUIRED_DOC_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:38.236650" elapsed="0.269023"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REQUIRED_DOC_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:38.505673" elapsed="0.226617"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:37.955551" elapsed="0.776739"/>
+</kw>
+<kw name="Upload Document On behalf of User" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:38.733295" elapsed="0.359144"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:39.094486" level="INFO">Sending C:\Users\SafetyTracker\resources\VARIABLES\certif_icon.png to browser.</msg>
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::input[@type="file"]</arg>
+<arg>${DOC_FILE_PATH}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:39.093492" elapsed="0.302106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${UPLOAD_DOC_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:39.396644" elapsed="0.229106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DOC_DATE_FILED}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:39.625750" elapsed="0.228875"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:39.854625" level="INFO">Clicking element 'xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]'.</msg>
+<arg>${DOC_DATE_FILED}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:39.854625" elapsed="0.261075"/>
+</kw>
+<kw name="Select Current Day" owner="UploadUserDocHelpers">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-02T18:32:40.116709" level="INFO">${today} = 2024-11-02 18:32:40.116</msg>
+<var>${today}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.115700" elapsed="0.001009"/>
+</kw>
+<kw name="Add Time To Date" owner="DateTime">
+<msg time="2024-11-02T18:32:40.119708" level="INFO">${tomorrow} = 03</msg>
+<var>${tomorrow}</var>
+<arg>${today}</arg>
+<arg>1 day</arg>
+<arg>result_format=%d</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.116709" elapsed="0.002999"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-11-02T18:32:40.119708" level="INFO">${tomorrow} = 3</msg>
+<var>${tomorrow}</var>
+<arg>${tomorrow}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.119708" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-02T18:32:40.120707" level="INFO">${day_xpath} = //div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]</msg>
+<var>${day_xpath}</var>
+<arg>//div[contains(@class, 'datepicker')]//button[text()='${tomorrow}'][not(@disabled)]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.119708" elapsed="0.000999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${day_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.120707" elapsed="0.226540"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:41.347499" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:40.347247" elapsed="1.000252"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:41.347499" level="INFO">Clicking element '//div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]'.</msg>
+<arg>${day_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:41.347499" elapsed="0.275269"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:40.115700" elapsed="1.507068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:41.623307" level="INFO">Clicking element 'xpath=//body[1]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/button[1]'.</msg>
+<arg>${SAVE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:41.622768" elapsed="0.276853"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:44.900590" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:41.899621" elapsed="3.000969"/>
+</kw>
+<arg>${DOC_TO_UPLOAD_NAME}</arg>
+<status status="PASS" start="2024-11-02T18:32:38.732290" elapsed="6.168300"/>
+</kw>
+<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:44.901642" elapsed="0.596864"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-11-02T18:32:45.498506" elapsed="0.504401"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:46.130664" level="INFO">Current page contains element 'xpath=//p[@class="document-card-header__info-title"][contains(text(),'upload-test')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]'.</msg>
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-02T18:32:46.003478" elapsed="0.127186"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:47.131998" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:46.131683" elapsed="1.000315"/>
+</kw>
+<arg>${DOC_TO_UPLOAD_NAME}</arg>
+<status status="PASS" start="2024-11-02T18:32:44.900590" elapsed="2.232492"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:20.717928" elapsed="26.415604"/>
+</test>
+<test id="s1-t2" name="Upload Certificate For A User" line="19">
+<kw name="Go to Required Certificate Page" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REQUIRED_CERTIFICATE_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:47.139896" elapsed="0.240825"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:47.380955" level="INFO">Clicking element 'xpath=//span[contains(text(),'Training certificates')]'.</msg>
+<arg>${REQUIRED_CERTIFICATE_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:47.380955" elapsed="0.261800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REQUIRED_CERTIFICATE_PAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:47.643336" elapsed="0.242911"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:47.138896" elapsed="0.747351"/>
+</kw>
+<kw name="Upload Document On behalf of User" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:47.888306" elapsed="0.227906"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:48.116748" level="INFO">Sending C:\Users\SafetyTracker\resources\VARIABLES\certif_icon.png to browser.</msg>
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::input[@type="file"]</arg>
+<arg>${DOC_FILE_PATH}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:48.116212" elapsed="0.259664"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${UPLOAD_DOC_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:48.375876" elapsed="0.224477"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DOC_DATE_FILED}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:48.601385" elapsed="0.255604"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:48.858019" level="INFO">Clicking element 'xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]'.</msg>
+<arg>${DOC_DATE_FILED}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:48.856989" elapsed="0.283038"/>
+</kw>
+<kw name="Select Current Day" owner="UploadUserDocHelpers">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-02T18:32:49.142477" level="INFO">${today} = 2024-11-02 18:32:49.142</msg>
+<var>${today}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.141968" elapsed="0.000586"/>
+</kw>
+<kw name="Add Time To Date" owner="DateTime">
+<msg time="2024-11-02T18:32:49.143063" level="INFO">${tomorrow} = 03</msg>
+<var>${tomorrow}</var>
+<arg>${today}</arg>
+<arg>1 day</arg>
+<arg>result_format=%d</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.142554" elapsed="0.000509"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-11-02T18:32:49.144199" level="INFO">${tomorrow} = 3</msg>
+<var>${tomorrow}</var>
+<arg>${tomorrow}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.143688" elapsed="0.000595"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-02T18:32:49.144890" level="INFO">${day_xpath} = //div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]</msg>
+<var>${day_xpath}</var>
+<arg>//div[contains(@class, 'datepicker')]//button[text()='${tomorrow}'][not(@disabled)]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.144283" elapsed="0.000607"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${day_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.144890" elapsed="0.229795"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:50.376372" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:49.374685" elapsed="1.001687"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:50.376372" level="INFO">Clicking element '//div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]'.</msg>
+<arg>${day_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:50.376372" elapsed="0.279640"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:49.140570" elapsed="1.515442"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:50.656012" level="INFO">Clicking element 'xpath=//body[1]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/button[1]'.</msg>
+<arg>${SAVE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-02T18:32:50.656012" elapsed="0.278509"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:53.935327" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:50.934521" elapsed="3.000806"/>
+</kw>
+<arg>${CERTIFICATE_TO_UPLOAD}</arg>
+<status status="PASS" start="2024-11-02T18:32:47.887269" elapsed="6.048058"/>
+</kw>
+<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-02T18:32:53.937403" elapsed="0.243809"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-11-02T18:32:54.181212" elapsed="0.497307"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:54.811850" level="INFO">Current page contains element 'xpath=//p[@class="document-card-header__info-title"][contains(text(),'Certificat 2')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]'.</msg>
+<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-02T18:32:54.678519" elapsed="0.133331"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-02T18:32:55.812314" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-02T18:32:54.811850" elapsed="1.000464"/>
+</kw>
+<arg>${CERTIFICATE_TO_UPLOAD}</arg>
+<status status="PASS" start="2024-11-02T18:32:53.936340" elapsed="1.877063"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-02T18:32:55.814397" elapsed="2.325490"/>
+</kw>
+<status status="PASS" start="2024-11-02T18:32:47.136898" elapsed="11.003990"/>
+</test>
+<test id="s1-t3" name="Validate Uploaded Document As A Manager" line="25">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:32:58.147634" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-02T18:32:58.146641" elapsed="62.252687"/>
+</kw>
+<kw name="Navigate to users page" owner="UploadUserDocHelpers">
+<kw name="Login To Application" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-11-02T18:34:10.874775" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-270.png"&gt;&lt;img src="selenium-screenshot-270.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-02T18:34:10.874775" level="FAIL">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</msg>
+<arg>${LOGIN_FORM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-11-02T18:34:00.409321" elapsed="10.468451">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.877772" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${LOADING_SPINNER}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Location Is" owner="common">
+<arg>${DASHBOARD_URL}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Performs login with given credentials</doc>
+<status status="FAIL" start="2024-11-02T18:34:00.408322" elapsed="10.471489">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIDEBAR_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${SIDEBAR_ELEMENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERS_SIDEBAR_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${USERS_SIDEBAR_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERS_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.880771" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${SIDEBAR_CROSS_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-02T18:34:10.880771" elapsed="0.000221"/>
+</kw>
+<arg>${MANAGER_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="FAIL" start="2024-11-02T18:34:00.407318" elapsed="10.473674">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Select a User From the List" owner="UploadUserDocHelpers">
+<arg>${USERS_SEARCH_BAR_MANAGER}</arg>
+<arg>${USER_UNDER_MANAGER}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.880992" elapsed="0.000000"/>
+</kw>
+<kw name="Go to Required Document Page" owner="UploadUserDocHelpers">
+<status status="NOT RUN" start="2024-11-02T18:34:10.880992" elapsed="0.000000"/>
+</kw>
+<kw name="Accept or Reject The Uploaded Document" owner="UploadUserDocHelpers">
+<arg>${DOC_TO_ACCEPT}</arg>
+<arg>${accept_btn}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.882030" elapsed="0.000000"/>
+</kw>
+<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
+<arg>${DOC_TO_ACCEPT}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.882030" elapsed="0.000000"/>
+</kw>
+<kw name="Accept or Reject The Uploaded Document" owner="UploadUserDocHelpers">
+<arg>${DOC_TO_REJECT}</arg>
+<arg>${reject_btn}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.883041" elapsed="0.000000"/>
+</kw>
+<kw name="Verify That the Document is well Rejected" owner="UploadUserDocHelpers">
+<arg>${DOC_TO_REJECT}</arg>
+<status status="NOT RUN" start="2024-11-02T18:34:10.883041" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-02T18:34:10.884038" elapsed="3.059634"/>
+</kw>
+<status status="FAIL" start="2024-11-02T18:32:58.144599" elapsed="75.800110">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+</test>
+<doc>Test suite for required documents creation and filters check</doc>
+<status status="FAIL" start="2024-11-02T18:32:15.391779" elapsed="118.554888"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Upload Users documents">Upload Users documents</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-02T18:32:15.654200" level="WARN">Error in file 'C:\Users\SafetyTracker\resources\HELPERS\common.resource' on line 35: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
