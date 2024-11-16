@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 Library           Collections
 Library           String
-Resource          ../VARIABLES/OverviewVariables.resource
+Resource          ../VARIABLES/overviewVariables.resource
 Resource          ../VARIABLES/Globals.resource
 Resource          common.resource
 

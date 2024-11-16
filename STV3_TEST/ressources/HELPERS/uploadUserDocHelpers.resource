@@ -5,7 +5,7 @@ Library           OperatingSystem
 Library           Collections
 Library           DateTime
 Library           String
-Resource          ../VARIABLES/UploadUserDocVariables.resource
+Resource          ../VARIABLES/uploadUserDocVariables.resource
 Resource          ../VARIABLES/Globals.resource
 Resource          common.resource
 
@@ -42,7 +42,7 @@ Go to Required Certificate Page
     Wait Until Element Is Visible                   ${REQUIRED_CERTIFICATE_PAGE}
 Select Current Day
     ${today}=    Get Current Date       
-    ${tomorrow}=    Add Time To Date    ${today}    1 day    result_format=%d 
+    ${tomorrow}=    Add Time To Date     ${today}    1 day    result_format=%d 
     ${tomorrow}=    Convert To Integer    ${tomorrow}   # Removes leading zero if present    
     ${day_xpath}=    Set Variable    //div[contains(@class, 'datepicker')]//button[text()='${tomorrow}'][not(@disabled)]
     Wait Until Element Is Visible    ${day_xpath}

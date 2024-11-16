@@ -3,7 +3,6 @@ Documentation     Page objects and keywords for Categories management
 Library           SeleniumLibrary
 Library           OperatingSystem
 Library           Collections
-# Library           FakerLibrary
 Resource          ../VARIABLES/categoriesVariables.resource
 Resource          ../VARIABLES/Globals.resource
 Resource          common.resource
@@ -27,7 +26,6 @@ Input Category Details
     [Arguments]    ${name}   
     Wait Until Element Is Visible     ${CATEGORY_NAME_INPUT}
     Input Text                        ${CATEGORY_NAME_INPUT}    ${name}
-    # Input Text    ${CATEGORY_DESC_INPUT}    ${description}
 Input Resource Details With Description
     [Arguments]    ${name}          ${path_to_icon}                             ${description}
     Wait Until Element Is Visible   ${CATEGORY_EDIT_NAME_INPUT}
@@ -78,8 +76,6 @@ Edit Existing Category
     Input Resource Details With Description    name=${updated_name}       path_to_icon=${PATH_TO_CAT_ICON}       description=${updated_desc}
     Submit Category Form
 
-# Generate Fake Category Name
-#     ${name}=    FakerLibrary.Company
-#     [Return]    Category_${name}
+
 
 
