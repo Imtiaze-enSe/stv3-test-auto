@@ -3,36 +3,50 @@ name: Robot Framework Reporter
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test-auto:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run tests
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y firefox geckodriver
+        pip install robotframework
+
+    - name: Run Robot Framework Tests
       uses: joonvena/robotframework-docker-action@v1.0
       with:
         robot_tests_dir: tests
-    - name: Store test report
+        robot_options: "--outputdir tests/output" # Ensures test reports are saved in the correct directory
+
+    - name: Upload Test Reports
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: reports
-        path: tests/output
+        name: test-reports
+        path: tests/output # Ensure this path matches where reports are saved
 
   report:
     if: always()
     needs: [test-auto]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Download test report
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Download Test Reports
       uses: actions/download-artifact@v4
       with:
-        name: reports
-        path: tests/output
-    - name: Output report
+        name: test-reports
+        path: tests/output # Ensure the downloaded artifact matches the upload path
+
+    - name: Generate Report
       uses: joonvena/robotframework-reporter-action@v2
       with:
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+        output_path: tests/output/report.html # Explicit path for the final report output
