@@ -3,32 +3,22 @@ name: Robot Framework Reporter
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test-auto:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y firefox geckodriver
-        pip install robotframework
-
-    - name: Run Robot Framework Tests
+    - uses: actions/checkout@v2
+    - name: Run tests
       uses: joonvena/robotframework-docker-action@v1.0
       with:
-        robot_tests_dir: tests
-        robot_options: "--outputdir tests/output" # Ensures test reports are saved in the correct directory
-
-    - name: Upload Test Reports
+        robot_tests_dir: STV3_TEST
+    - name: Store test report
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: test-reports
+        name: reports
         path: STV3_TEST/output
 
   report:
@@ -36,17 +26,13 @@ jobs:
     needs: [test-auto]
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Download Test Reports
+    - uses: actions/checkout@v2
+    - name: Download test report
       uses: actions/download-artifact@v4
       with:
-        name: test-reports
+        name: reports
         path: STV3_TEST/output
-
-    - name: Generate Report
+    - name: Output report
       uses: joonvena/robotframework-reporter-action@v2
       with:
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-        output_path: tests/output/report.html # Explicit path for the final report output
