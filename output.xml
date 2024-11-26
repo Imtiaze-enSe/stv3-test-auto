@@ -1,587 +1,982 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-11-02T18:32:15.390817" rpa="false" schemaversion="5">
-<suite id="s1" name="Upload Users documents" source="C:\Users\SafetyTracker\tests\Upload_Users_documents.robot">
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-11-27T00:03:47.506027" rpa="false" schemaversion="5">
+<suite id="s1" name="Competence Overview Suite" source="C:\Users\Hp\stv3-test-auto\STV3_TEST\tests\competence_overview_suite.robot">
 <kw name="Open Browser To Application" owner="common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:15.661589" level="INFO">Opening browser 'chrome' to base url 'https://stv3ca-prod.netlify.app/login'.</msg>
+<msg time="2024-11-27T00:03:48.306304" level="INFO">Opening browser 'chrome' to base url 'https://stv3ca-prod.netlify.app/login'.</msg>
 <arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-02T18:32:15.660628" elapsed="4.989660"/>
+<status status="PASS" start="2024-11-27T00:03:48.305046" elapsed="7.561548"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-11-02T18:32:20.651292" elapsed="0.061633"/>
+<status status="PASS" start="2024-11-27T00:03:55.867112" elapsed="0.087969"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-11-02T18:32:20.713926" elapsed="0.003023"/>
+<status status="PASS" start="2024-11-27T00:03:55.956081" elapsed="0.016742"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-11-02T18:32:20.716949" elapsed="0.000979"/>
+<status status="PASS" start="2024-11-27T00:03:55.973842" elapsed="0.001017"/>
 </kw>
 <doc>Opens the browser and sets up Selenium</doc>
-<status status="PASS" start="2024-11-02T18:32:15.659572" elapsed="5.058356"/>
+<status status="PASS" start="2024-11-27T00:03:48.304047" elapsed="7.670812"/>
 </kw>
-<test id="s1-t1" name="Upload Document For A User" line="12">
-<kw name="Navigate to users page" owner="UploadUserDocHelpers">
+<test id="s1-t1" name="Test Search Filter" line="12">
+<kw name="Navigate to Overview page" owner="overviewHelpers">
 <kw name="Login To Application" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_FORM}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:20.719927" elapsed="0.249150"/>
+<status status="PASS" start="2024-11-27T00:03:55.982092" elapsed="0.361603"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${USERNAME_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:20.969077" elapsed="0.249550"/>
+<status status="PASS" start="2024-11-27T00:03:56.344736" elapsed="0.319584"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:21.219616" level="INFO">Typing text 'supadmin@imense.net' into text field 'xpath=//input[@id="Enter your email address"]'.</msg>
+<msg time="2024-11-27T00:03:56.666345" level="INFO">Typing text 'supadmin@imense.net' into text field 'xpath=//input[@id="Enter your email address"]'.</msg>
 <arg>${USERNAME_INPUT}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:21.218627" elapsed="0.578676"/>
+<status status="PASS" start="2024-11-27T00:03:56.665349" elapsed="0.784815"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:21.799332" level="INFO">Typing password into text field 'xpath=//input[@id="Enter your password"]'.</msg>
-<msg time="2024-11-02T18:32:22.142353" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-11-27T00:03:57.451184" level="INFO">Typing password into text field 'xpath=//input[@id="Enter your password"]'.</msg>
+<msg time="2024-11-27T00:03:57.737870" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:21.798348" elapsed="0.605181"/>
+<status status="PASS" start="2024-11-27T00:03:57.450164" elapsed="0.679701"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:22.404537" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<msg time="2024-11-27T00:03:58.130434" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:22.404537" elapsed="0.374072"/>
+<status status="PASS" start="2024-11-27T00:03:58.129919" elapsed="0.398947"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>${LOADING_SPINNER}</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:22.778609" elapsed="10.147121"/>
+<status status="PASS" start="2024-11-27T00:03:58.529884" elapsed="10.158951"/>
 </kw>
 <kw name="Wait Until Location Is" owner="common">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:33.046401" level="INFO">Current location is 'https://stv3ca-prod.netlify.app/instant-observations?date=this_week'.</msg>
+<msg time="2024-11-27T00:04:08.820930" level="INFO">Current location is 'https://stv3ca-prod.netlify.app/instant-observations?date=this_week'.</msg>
 <arg>${expected_url}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-11-02T18:32:32.928086" elapsed="0.118856"/>
+<status status="PASS" start="2024-11-27T00:04:08.694429" elapsed="0.127024"/>
 </kw>
 <arg>${TIMEOUT}</arg>
 <arg>1s</arg>
 <arg>Location Should Be</arg>
 <arg>${expected_url}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2024-11-02T18:32:32.927031" elapsed="0.119911"/>
+<status status="PASS" start="2024-11-27T00:04:08.692899" elapsed="0.129593"/>
 </kw>
 <arg>${DASHBOARD_URL}</arg>
-<status status="PASS" start="2024-11-02T18:32:32.925730" elapsed="0.121212"/>
-</kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<doc>Performs login with given credentials</doc>
-<status status="PASS" start="2024-11-02T18:32:20.718925" elapsed="12.329043"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SIDEBAR_ELEMENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:33.047968" elapsed="0.266239"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:33.315911" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]'.</msg>
-<arg>${SIDEBAR_ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:33.314819" elapsed="0.296230"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USERS_SIDEBAR_LINK}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:33.611558" elapsed="0.238851"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:33.850915" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[1]'.</msg>
-<arg>${USERS_SIDEBAR_LINK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:33.850915" elapsed="0.366748"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USERS_PAGE_HEADER}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:34.218718" elapsed="0.226480"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:34.445812" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]'.</msg>
-<arg>${SIDEBAR_CROSS_ICON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:34.445812" elapsed="0.263127"/>
+<status status="PASS" start="2024-11-27T00:04:08.690878" elapsed="0.133609"/>
 </kw>
 <arg>${VALID_USERNAME}</arg>
 <arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2024-11-02T18:32:20.718925" elapsed="13.991039"/>
-</kw>
-<kw name="Select a User From the List" owner="UploadUserDocHelpers">
-<kw name="Search for a User" owner="UploadUserDocHelpers">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:34.712984" level="INFO">Typing text 'Colten GREENFIELD' into text field 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/form[1]/div[1]/div[1]/input[1]'.</msg>
-<arg>${USERS_SEARCH_BAR}</arg>
-<arg>${searched_user}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:34.711972" elapsed="0.607498"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:35.320493" level="INFO">Clicking element 'xpath=//form[1]/div[1]/div[6]/button[1]'.</msg>
-<arg>${APLLY_SEARCH_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:35.319470" elapsed="0.351700"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${searched_user}')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:35.671170" elapsed="1.039617"/>
-</kw>
-<arg>${USERS_SEARCH_BAR}</arg>
-<arg>${user_name}</arg>
-<status status="PASS" start="2024-11-02T18:32:34.711972" elapsed="1.999359"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:36.712370" level="INFO">Clicking element 'xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'Colten GREENFIELD')]'.</msg>
-<arg>xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${user_name}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:36.711331" elapsed="0.339237"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${USER_PROFILE_TAB}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-11-02T18:32:37.050568" elapsed="0.904983"/>
-</kw>
-<arg>${USERS_SEARCH_BAR}</arg>
-<arg>${USER_NAME}</arg>
-<status status="PASS" start="2024-11-02T18:32:34.709964" elapsed="3.245587"/>
-</kw>
-<kw name="Go to Required Document Page" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${REQUIRED_DOC_LINK}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:37.956560" elapsed="0.280090"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:38.237175" level="INFO">Clicking element 'xpath=//span[contains(text(),'Required documents')]'.</msg>
-<arg>${REQUIRED_DOC_LINK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:38.236650" elapsed="0.269023"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${REQUIRED_DOC_PAGE_TITLE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:38.505673" elapsed="0.226617"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:37.955551" elapsed="0.776739"/>
-</kw>
-<kw name="Upload Document On behalf of User" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:38.733295" elapsed="0.359144"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:39.094486" level="INFO">Sending C:\Users\SafetyTracker\resources\VARIABLES\certif_icon.png to browser.</msg>
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::input[@type="file"]</arg>
-<arg>${DOC_FILE_PATH}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:39.093492" elapsed="0.302106"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${UPLOAD_DOC_MODAL}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:39.396644" elapsed="0.229106"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${DOC_DATE_FILED}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:39.625750" elapsed="0.228875"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:39.854625" level="INFO">Clicking element 'xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]'.</msg>
-<arg>${DOC_DATE_FILED}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:39.854625" elapsed="0.261075"/>
-</kw>
-<kw name="Select Current Day" owner="UploadUserDocHelpers">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-11-02T18:32:40.116709" level="INFO">${today} = 2024-11-02 18:32:40.116</msg>
-<var>${today}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.115700" elapsed="0.001009"/>
-</kw>
-<kw name="Add Time To Date" owner="DateTime">
-<msg time="2024-11-02T18:32:40.119708" level="INFO">${tomorrow} = 03</msg>
-<var>${tomorrow}</var>
-<arg>${today}</arg>
-<arg>1 day</arg>
-<arg>result_format=%d</arg>
-<doc>Adds time to date and returns the resulting date.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.116709" elapsed="0.002999"/>
-</kw>
-<kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2024-11-02T18:32:40.119708" level="INFO">${tomorrow} = 3</msg>
-<var>${tomorrow}</var>
-<arg>${tomorrow}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.119708" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-02T18:32:40.120707" level="INFO">${day_xpath} = //div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]</msg>
-<var>${day_xpath}</var>
-<arg>//div[contains(@class, 'datepicker')]//button[text()='${tomorrow}'][not(@disabled)]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.119708" elapsed="0.000999"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${day_xpath}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.120707" elapsed="0.226540"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:41.347499" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:40.347247" elapsed="1.000252"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:41.347499" level="INFO">Clicking element '//div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]'.</msg>
-<arg>${day_xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:41.347499" elapsed="0.275269"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:40.115700" elapsed="1.507068"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:41.623307" level="INFO">Clicking element 'xpath=//body[1]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/button[1]'.</msg>
-<arg>${SAVE_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:41.622768" elapsed="0.276853"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:44.900590" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:41.899621" elapsed="3.000969"/>
-</kw>
-<arg>${DOC_TO_UPLOAD_NAME}</arg>
-<status status="PASS" start="2024-11-02T18:32:38.732290" elapsed="6.168300"/>
-</kw>
-<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:44.901642" elapsed="0.596864"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-11-02T18:32:45.498506" elapsed="0.504401"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:46.130664" level="INFO">Current page contains element 'xpath=//p[@class="document-card-header__info-title"][contains(text(),'upload-test')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]'.</msg>
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-11-02T18:32:46.003478" elapsed="0.127186"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:47.131998" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:46.131683" elapsed="1.000315"/>
-</kw>
-<arg>${DOC_TO_UPLOAD_NAME}</arg>
-<status status="PASS" start="2024-11-02T18:32:44.900590" elapsed="2.232492"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:20.717928" elapsed="26.415604"/>
-</test>
-<test id="s1-t2" name="Upload Certificate For A User" line="19">
-<kw name="Go to Required Certificate Page" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${REQUIRED_CERTIFICATE_LINK}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:47.139896" elapsed="0.240825"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:47.380955" level="INFO">Clicking element 'xpath=//span[contains(text(),'Training certificates')]'.</msg>
-<arg>${REQUIRED_CERTIFICATE_LINK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:47.380955" elapsed="0.261800"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${REQUIRED_CERTIFICATE_PAGE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:47.643336" elapsed="0.242911"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:47.138896" elapsed="0.747351"/>
-</kw>
-<kw name="Upload Document On behalf of User" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:47.888306" elapsed="0.227906"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:48.116748" level="INFO">Sending C:\Users\SafetyTracker\resources\VARIABLES\certif_icon.png to browser.</msg>
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::input[@type="file"]</arg>
-<arg>${DOC_FILE_PATH}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:48.116212" elapsed="0.259664"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${UPLOAD_DOC_MODAL}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:48.375876" elapsed="0.224477"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${DOC_DATE_FILED}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:48.601385" elapsed="0.255604"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:48.858019" level="INFO">Clicking element 'xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]'.</msg>
-<arg>${DOC_DATE_FILED}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:48.856989" elapsed="0.283038"/>
-</kw>
-<kw name="Select Current Day" owner="UploadUserDocHelpers">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-11-02T18:32:49.142477" level="INFO">${today} = 2024-11-02 18:32:49.142</msg>
-<var>${today}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.141968" elapsed="0.000586"/>
-</kw>
-<kw name="Add Time To Date" owner="DateTime">
-<msg time="2024-11-02T18:32:49.143063" level="INFO">${tomorrow} = 03</msg>
-<var>${tomorrow}</var>
-<arg>${today}</arg>
-<arg>1 day</arg>
-<arg>result_format=%d</arg>
-<doc>Adds time to date and returns the resulting date.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.142554" elapsed="0.000509"/>
-</kw>
-<kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2024-11-02T18:32:49.144199" level="INFO">${tomorrow} = 3</msg>
-<var>${tomorrow}</var>
-<arg>${tomorrow}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.143688" elapsed="0.000595"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-02T18:32:49.144890" level="INFO">${day_xpath} = //div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]</msg>
-<var>${day_xpath}</var>
-<arg>//div[contains(@class, 'datepicker')]//button[text()='${tomorrow}'][not(@disabled)]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.144283" elapsed="0.000607"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${day_xpath}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.144890" elapsed="0.229795"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:50.376372" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:49.374685" elapsed="1.001687"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:50.376372" level="INFO">Clicking element '//div[contains(@class, 'datepicker')]//button[text()='3'][not(@disabled)]'.</msg>
-<arg>${day_xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:50.376372" elapsed="0.279640"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:49.140570" elapsed="1.515442"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:50.656012" level="INFO">Clicking element 'xpath=//body[1]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/button[1]'.</msg>
-<arg>${SAVE_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-02T18:32:50.656012" elapsed="0.278509"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:53.935327" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:50.934521" elapsed="3.000806"/>
-</kw>
-<arg>${CERTIFICATE_TO_UPLOAD}</arg>
-<status status="PASS" start="2024-11-02T18:32:47.887269" elapsed="6.048058"/>
-</kw>
-<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-02T18:32:53.937403" elapsed="0.243809"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-11-02T18:32:54.181212" elapsed="0.497307"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:54.811850" level="INFO">Current page contains element 'xpath=//p[@class="document-card-header__info-title"][contains(text(),'Certificat 2')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]'.</msg>
-<arg>xpath=//p[@class="document-card-header__info-title"][contains(text(),'${required_doc}')]/following::img[@src="/assets/checkmark-cd1f4ad2.svg"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-11-02T18:32:54.678519" elapsed="0.133331"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-02T18:32:55.812314" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-02T18:32:54.811850" elapsed="1.000464"/>
-</kw>
-<arg>${CERTIFICATE_TO_UPLOAD}</arg>
-<status status="PASS" start="2024-11-02T18:32:53.936340" elapsed="1.877063"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-11-02T18:32:55.814397" elapsed="2.325490"/>
-</kw>
-<status status="PASS" start="2024-11-02T18:32:47.136898" elapsed="11.003990"/>
-</test>
-<test id="s1-t3" name="Validate Uploaded Document As A Manager" line="25">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:32:58.147634" level="INFO">Opening browser 'firefox' to base url 'None'.</msg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-02T18:32:58.146641" elapsed="62.252687"/>
-</kw>
-<kw name="Navigate to users page" owner="UploadUserDocHelpers">
-<kw name="Login To Application" owner="common">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-11-02T18:34:10.874775" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-270.png"&gt;&lt;img src="selenium-screenshot-270.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-02T18:34:10.874775" level="FAIL">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</msg>
-<arg>${LOGIN_FORM}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-11-02T18:34:00.409321" elapsed="10.468451">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USERNAME_INPUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.877772" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>${USERNAME_INPUT}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${LOGIN_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${LOADING_SPINNER}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Location Is" owner="common">
-<arg>${DASHBOARD_URL}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.878776" elapsed="0.000000"/>
-</kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
 <doc>Performs login with given credentials</doc>
-<status status="FAIL" start="2024-11-02T18:34:00.408322" elapsed="10.471489">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-11-27T00:03:55.981111" elapsed="12.844369"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SIDEBAR_ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-27T00:04:08.825480" elapsed="0.276955"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:09.103445" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]'.</msg>
 <arg>${SIDEBAR_ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-27T00:04:09.102435" elapsed="0.526486"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USERS_SIDEBAR_LINK}</arg>
+<arg>${SIDEBAR_COMPETENCE_LINK}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-27T00:04:09.628921" elapsed="0.264957"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>${USERS_SIDEBAR_LINK}</arg>
+<msg time="2024-11-27T00:04:09.894924" level="INFO">Clicking element 'xpath=//p[contains(text(),'Competence')]'.</msg>
+<arg>${SIDEBAR_COMPETENCE_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.879811" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-27T00:04:09.894385" elapsed="0.437461"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${USERS_PAGE_HEADER}</arg>
+<arg>${OVERVIEW_PAGE_TITLE}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.880771" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-27T00:04:10.333029" elapsed="0.265593"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:10.600113" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]'.</msg>
 <arg>${SIDEBAR_CROSS_ICON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-11-02T18:34:10.880771" elapsed="0.000221"/>
+<status status="PASS" start="2024-11-27T00:04:10.598622" elapsed="0.587389"/>
 </kw>
-<arg>${MANAGER_USERNAME}</arg>
-<arg>${VALID_PASSWORD}</arg>
-<status status="FAIL" start="2024-11-02T18:34:00.407318" elapsed="10.473674">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-11-27T00:03:55.977299" elapsed="15.208712"/>
 </kw>
-<kw name="Select a User From the List" owner="UploadUserDocHelpers">
-<arg>${USERS_SEARCH_BAR_MANAGER}</arg>
-<arg>${USER_UNDER_MANAGER}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.880992" elapsed="0.000000"/>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-11-27T00:04:11.192032" level="INFO">${search_term} = Antonio ZALSOMER</msg>
+<var>${search_term}</var>
+<arg>${SEARCHED_USER_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-11-27T00:04:11.189046" elapsed="0.004058"/>
 </kw>
-<kw name="Go to Required Document Page" owner="UploadUserDocHelpers">
-<status status="NOT RUN" start="2024-11-02T18:34:10.880992" elapsed="0.000000"/>
+<kw name="Apply Search Filter" owner="overviewHelpers">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:11.198061" level="INFO">Typing text 'Antonio ZALSOMER' into text field 'xpath=//Input[@name="search"]'.</msg>
+<arg>${SEARCH_BAR}</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:11.196057" elapsed="0.892004"/>
 </kw>
-<kw name="Accept or Reject The Uploaded Document" owner="UploadUserDocHelpers">
-<arg>${DOC_TO_ACCEPT}</arg>
-<arg>${accept_btn}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.882030" elapsed="0.000000"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:12.089085" elapsed="0.257352"/>
 </kw>
-<kw name="Verify That the Document is well Uploaded" owner="UploadUserDocHelpers">
-<arg>${DOC_TO_ACCEPT}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.882030" elapsed="0.000000"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:12.347612" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[1]'.</msg>
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:12.346437" elapsed="1.091962"/>
 </kw>
-<kw name="Accept or Reject The Uploaded Document" owner="UploadUserDocHelpers">
-<arg>${DOC_TO_REJECT}</arg>
-<arg>${reject_btn}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.883041" elapsed="0.000000"/>
+<arg>${search_term}</arg>
+<status status="PASS" start="2024-11-27T00:04:11.195061" elapsed="2.243338"/>
 </kw>
-<kw name="Verify That the Document is well Rejected" owner="UploadUserDocHelpers">
-<arg>${DOC_TO_REJECT}</arg>
-<status status="NOT RUN" start="2024-11-02T18:34:10.883041" elapsed="0.000000"/>
+<kw name="Check Search Result" owner="overviewHelpers">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:14.161032" level="INFO">Current page contains element 'xpath=//tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/p[1][contains(text(), 'Antonio ZALSOMER')]'.</msg>
+<arg>xpath=//tbody[1]/tr[1]/td[1]/div[1]/div[2]/div[1]/div[1]/p[1][contains(text(), '${search_result}')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-27T00:04:13.441457" elapsed="0.719575"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-11-02T18:34:10.884038" elapsed="3.059634"/>
+<arg>${search_term}</arg>
+<status status="PASS" start="2024-11-27T00:04:13.440427" elapsed="0.720605"/>
 </kw>
-<status status="FAIL" start="2024-11-02T18:32:58.144599" elapsed="75.800110">Element 'xpath=//h1[contains(text(),'Sign In')]' not visible after 5 seconds.</status>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-27T00:04:16.162805" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-27T00:04:14.162222" elapsed="2.000583"/>
+</kw>
+<kw name="Reset Filters" owner="overviewHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:16.165905" elapsed="0.287295"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:16.455379" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[2]'.</msg>
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:16.454232" elapsed="0.831123"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:16.163755" elapsed="1.122752"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:03:55.974859" elapsed="21.312576"/>
 </test>
+<test id="s1-t2" name="Test Topic Filter" line="20">
+<kw name="Apply Resource Filter" owner="overviewHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:17.296078" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]'.</msg>
+<arg>${filter_input_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:17.295128" elapsed="0.574369"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-27T00:04:17.873083" level="INFO">${option_locator} = xpath=//div[contains(text(), 'Topic 1')]</msg>
+<var>${option_locator}</var>
+<arg>xpath=//div[contains(text(), '${doc_type}')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-27T00:04:17.871087" elapsed="0.003057"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option_locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:17.875155" elapsed="0.294502"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:18.172693" level="INFO">xpath=//div[contains(text(), 'Topic 1')]</msg>
+<arg>${option_locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:18.171689" elapsed="0.001004"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:18.174686" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Topic 1')]'.</msg>
+<arg>${option_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:18.173685" elapsed="0.583871"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:18.759108" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[1]'.</msg>
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:18.758079" elapsed="0.856356"/>
+</kw>
+<arg>${SELECT_TOPIC_BTN}</arg>
+<arg>${SEARCHED_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-11-27T00:04:17.293074" elapsed="2.321876"/>
+</kw>
+<kw name="Verify Topic Filter" owner="overviewHelpers">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:20.193102" level="INFO">Current page contains element 'xpath=//table[1]/thead[1]/tr[1]/th[2][contains(text(), 'Topic 1')]'.</msg>
+<arg>xpath=//table[1]/thead[1]/tr[1]/th[2][contains(text(), '${filtered_topic}')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-27T00:04:19.615969" elapsed="0.577133"/>
+</kw>
+<arg>${SEARCHED_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-11-27T00:04:19.614950" elapsed="0.578661"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-27T00:04:21.195096" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-27T00:04:20.193611" elapsed="1.001485"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:17.291043" elapsed="3.905122"/>
+</test>
+<test id="s1-t3" name="Test Certificate Filter" line="24">
+<kw name="Apply Resource Filter" owner="overviewHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:21.206811" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]'.</msg>
+<arg>${filter_input_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:21.206811" elapsed="0.492767"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-27T00:04:21.700777" level="INFO">${option_locator} = xpath=//div[contains(text(), 'Certificat 1')]</msg>
+<var>${option_locator}</var>
+<arg>xpath=//div[contains(text(), '${doc_type}')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-27T00:04:21.700144" elapsed="0.000633"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${option_locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:21.701322" elapsed="0.264237"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:21.966590" level="INFO">xpath=//div[contains(text(), 'Certificat 1')]</msg>
+<arg>${option_locator}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:21.966590" elapsed="0.000994"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:21.968590" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Certificat 1')]'.</msg>
+<arg>${option_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:21.967584" elapsed="0.647282"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:22.616892" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[1]'.</msg>
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:22.615897" elapsed="1.008674"/>
+</kw>
+<arg>${SELECT_CERTIFICATE_BTN}</arg>
+<arg>${SEARCHED_CERTIFICATE}</arg>
+<status status="PASS" start="2024-11-27T00:04:21.202666" elapsed="2.421905"/>
+</kw>
+<kw name="Verify Certificate Filter" owner="overviewHelpers">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:24.049131" level="INFO">Current page contains element 'xpath=//table[1]/thead[1]/tr[2]/th[2]/div[1]/div[2]/span[2][contains(text(), 'Certificat 1')]'.</msg>
+<arg>xpath=//table[1]/thead[1]/tr[2]/th[2]/div[1]/div[2]/span[2][contains(text(), '${filtered_topic}')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-27T00:04:23.626604" elapsed="0.422800"/>
+</kw>
+<arg>${SEARCHED_CERTIFICATE}</arg>
+<status status="PASS" start="2024-11-27T00:04:23.625585" elapsed="0.424226"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-27T00:04:25.051775" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-27T00:04:24.050080" elapsed="1.001695"/>
+</kw>
+<kw name="Reset Filters" owner="overviewHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:25.056276" elapsed="0.267755"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:25.326043" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[2]'.</msg>
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:25.324956" elapsed="0.895232"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:25.054232" elapsed="1.166997"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:21.200717" elapsed="5.020512"/>
+</test>
+<test id="s1-t4" name="Test User Type Internal Filter" line="30">
+<kw name="Select User Type Filter" owner="overviewHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECT_USER_TYPE_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:26.225621" elapsed="0.248292"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:26.475942" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]'.</msg>
+<arg>${SELECT_USER_TYPE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:26.474946" elapsed="0.540538"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:27.018557" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Internal')]'.</msg>
+<arg>${INTERNAL_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:27.017556" elapsed="0.578115"/>
+</kw>
+<arg>'${type}' == 'internal'</arg>
+<arg>Click Element</arg>
+<arg>${INTERNAL_OPTION}</arg>
+<arg>ELSE IF</arg>
+<arg>'${type}' == 'external'</arg>
+<arg>Click Element</arg>
+<arg>${EXTERNAL_OPTION}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-27T00:04:27.016564" elapsed="0.579107"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:27.597719" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[1]'.</msg>
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:27.596725" elapsed="0.551161"/>
+</kw>
+<arg>internal</arg>
+<status status="PASS" start="2024-11-27T00:04:26.225049" elapsed="1.922837"/>
+</kw>
+<kw name="Verify User Types" owner="overviewHelpers">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:38.305739" level="INFO">${all_elements} = []</msg>
+<var>${all_elements}</var>
+<arg>xpath=//tbody/tr//td//div[1]/div[3]/p[1]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:28.149955" elapsed="10.155784"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:38.307843" level="INFO">[]</msg>
+<arg>${all_elements}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.306825" elapsed="0.001018"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-27T00:04:38.308832" level="INFO">Length is 0.</msg>
+<msg time="2024-11-27T00:04:38.309770" level="INFO">${row_count} = 0</msg>
+<var>${row_count}</var>
+<arg>${all_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.308832" elapsed="0.000938"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:38.310832" level="INFO">Found 0 visible rows after applying Internal filter</msg>
+<arg>Found ${row_count} visible rows after applying ${expected_type} filter</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.309770" elapsed="0.001062"/>
+</kw>
+<if>
+<branch type="IF" condition="${row_count} == 0">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:38.312840" level="INFO">No visible rows found with type 'Internal' - This is a valid scenario</msg>
+<arg>No visible rows found with type '${expected_type}' - This is a valid scenario</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.312840" elapsed="0.000000"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<msg time="2024-11-27T00:04:38.313834" level="INFO">Execution passed with message:
+Filter working correctly - No matching users found</msg>
+<arg>Filter working correctly - No matching users found</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.313834" elapsed="0.000991">Filter working correctly - No matching users found</status>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:38.311826" elapsed="0.002999">Filter working correctly - No matching users found</status>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:38.316825" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:38.316825" elapsed="0.000965"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:38.317790" elapsed="0.001482"/>
+</kw>
+<var name="${row}"/>
+<status status="NOT RUN" start="2024-11-27T00:04:38.315833" elapsed="0.003439"/>
+</iter>
+<var>${row}</var>
+<value>@{all_elements}</value>
+<status status="NOT RUN" start="2024-11-27T00:04:38.315833" elapsed="0.004476"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>All visible rows match the expected type '${expected_type}'</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:38.320309" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-27T00:04:38.314825" elapsed="0.006574"/>
+</branch>
+<status status="PASS" start="2024-11-27T00:04:38.311826" elapsed="0.009573">Filter working correctly - No matching users found</status>
+</if>
+<arg>Internal</arg>
+<status status="PASS" start="2024-11-27T00:04:28.148876" elapsed="10.172523">Filter working correctly - No matching users found</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:38.322365" elapsed="0.000000"/>
+</kw>
+<kw name="Reset Filters" owner="overviewHelpers">
+<status status="NOT RUN" start="2024-11-27T00:04:38.323758" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:26.223911" elapsed="12.100998">Filter working correctly - No matching users found</status>
+</test>
+<test id="s1-t5" name="Test User Type External Filter" line="36">
+<kw name="Select User Type Filter" owner="overviewHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SELECT_USER_TYPE_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.330522" elapsed="0.253597"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:38.587168" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]'.</msg>
+<arg>${SELECT_USER_TYPE_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:38.585184" elapsed="0.516648"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:39.111979" level="INFO">Clicking element 'xpath=//div[contains(text(), 'External')]'.</msg>
+<arg>${EXTERNAL_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:39.110992" elapsed="0.584873"/>
+</kw>
+<arg>'${type}' == 'internal'</arg>
+<arg>Click Element</arg>
+<arg>${INTERNAL_OPTION}</arg>
+<arg>ELSE IF</arg>
+<arg>'${type}' == 'external'</arg>
+<arg>Click Element</arg>
+<arg>${EXTERNAL_OPTION}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-27T00:04:39.107921" elapsed="0.587944"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:39.697957" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[1]'.</msg>
+<arg>${APPLY_FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:39.696959" elapsed="0.646119"/>
+</kw>
+<arg>external</arg>
+<status status="PASS" start="2024-11-27T00:04:38.329449" elapsed="2.014140"/>
+</kw>
+<kw name="Verify User Types" owner="overviewHelpers">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:40.972741" level="INFO">${all_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.162")&gt;, &lt;selenium.webdri...</msg>
+<var>${all_elements}</var>
+<arg>xpath=//tbody/tr//td//div[1]/div[3]/p[1]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:40.344704" elapsed="0.628037"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:40.973774" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.162")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.163")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.164")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.165")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.166")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.167")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.168")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.169")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.170")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.171")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.172")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.173")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.174")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.175")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.176")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.177")&gt;]</msg>
+<arg>${all_elements}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:40.973774" elapsed="0.001001"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-11-27T00:04:40.975774" level="INFO">Length is 16.</msg>
+<msg time="2024-11-27T00:04:40.975774" level="INFO">${row_count} = 16</msg>
+<var>${row_count}</var>
+<arg>${all_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-11-27T00:04:40.974775" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:40.977297" level="INFO">Found 16 visible rows after applying External filter</msg>
+<arg>Found ${row_count} visible rows after applying ${expected_type} filter</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:40.975774" elapsed="0.001523"/>
+</kw>
+<if>
+<branch type="IF" condition="${row_count} == 0">
+<kw name="Log" owner="BuiltIn">
+<arg>No visible rows found with type '${expected_type}' - This is a valid scenario</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:40.979326" elapsed="0.000000"/>
+</kw>
+<kw name="Pass Execution" owner="BuiltIn">
+<arg>Filter working correctly - No matching users found</arg>
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<status status="NOT RUN" start="2024-11-27T00:04:40.979326" elapsed="0.000998"/>
+</kw>
+<status status="NOT RUN" start="2024-11-27T00:04:40.978324" elapsed="0.002000"/>
+</branch>
+<branch type="ELSE">
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.153235" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:40.981324" elapsed="0.171911"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.155287" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.155287" elapsed="0.000993"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.156280" elapsed="0.002014"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.162")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:40.981324" elapsed="0.177970"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.302275" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.160993" elapsed="0.141282"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.304906" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.304388" elapsed="0.001609"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.305997" elapsed="0.001592"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.163")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.159941" elapsed="0.147648"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.447824" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.308681" elapsed="0.139143"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.448330" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.448330" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.448330" elapsed="0.001006"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.164")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.308681" elapsed="0.140655"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.568094" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.449336" elapsed="0.118758"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.571280" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.570279" elapsed="0.001001"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.572273" elapsed="0.002056"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.165")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.449336" elapsed="0.124993"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.713661" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.575339" elapsed="0.138322"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.715686" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.714681" elapsed="0.001005"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.716680" elapsed="0.002026"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.166")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.574329" elapsed="0.145355"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:41.858571" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.720714" elapsed="0.137857"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:41.860322" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.858571" elapsed="0.001751"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.861418" elapsed="0.001161"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.167")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.719684" elapsed="0.142895"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.005257" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:41.863666" elapsed="0.141591"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.007655" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.006346" elapsed="0.001309"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.008744" elapsed="0.001006"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.168")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:41.863666" elapsed="0.147083"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.151211" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.011745" elapsed="0.139466"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.153749" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.152217" elapsed="0.001532"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.154782" elapsed="0.001996"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.169")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.010749" elapsed="0.146029"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.297904" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.157778" elapsed="0.140126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.299988" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.298981" elapsed="0.001997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.300978" elapsed="0.003007"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.170")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.156778" elapsed="0.147207"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.443766" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.305978" elapsed="0.137788"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.446132" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.444941" elapsed="0.001191"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.447168" elapsed="0.002010"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.171")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.304979" elapsed="0.144199"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.596741" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.451413" elapsed="0.145328"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.597345" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.597345" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.597920" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.172")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.450378" elapsed="0.148100"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.715844" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.599049" elapsed="0.116795"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.716878" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.715844" elapsed="0.001034"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.717877" elapsed="0.001298"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.173")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.598478" elapsed="0.121207"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.836358" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.719685" elapsed="0.116673"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.838406" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.837381" elapsed="0.001025"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.839410" elapsed="0.000996"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.174")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.719685" elapsed="0.120721"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:42.981384" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.842411" elapsed="0.138973"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:42.982411" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.981384" elapsed="0.001027"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.984418" elapsed="0.002551"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.175")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.841407" elapsed="0.145562"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:43.126398" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:42.988979" elapsed="0.137419"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:43.128486" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.127500" elapsed="0.000986"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.128486" elapsed="0.002007"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.176")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:42.987980" elapsed="0.142513"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:43.271256" level="INFO">${type_text} = External</msg>
+<var>${type_text}</var>
+<arg>${row}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.131500" elapsed="0.139756"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:43.272285" level="INFO">Found row with type: External</msg>
+<arg>Found row with type: ${type_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.272285" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${type_text}</arg>
+<arg>${expected_type}</arg>
+<arg>msg=Found visible row with type '${type_text}' when filter is set to '${expected_type}'</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.273347" elapsed="0.001004"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2e98f90ebe5340c7aa84921de686b935", element="f.04AE6298B3996665FBFC703AD7AD22D6.d.C2B134F89093FF25A3F4B224205CD2C0.e.177")&gt;</var>
+<status status="PASS" start="2024-11-27T00:04:43.131500" elapsed="0.143846"/>
+</iter>
+<var>${row}</var>
+<value>@{all_elements}</value>
+<status status="PASS" start="2024-11-27T00:04:40.980324" elapsed="2.295022"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-27T00:04:43.276278" level="INFO">All visible rows match the expected type 'External'</msg>
+<arg>All visible rows match the expected type '${expected_type}'</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.275346" elapsed="0.000932"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:40.980324" elapsed="2.295954"/>
+</branch>
+<status status="PASS" start="2024-11-27T00:04:40.978324" elapsed="2.299027"/>
+</if>
+<arg>External</arg>
+<status status="PASS" start="2024-11-27T00:04:40.344181" elapsed="2.933170"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-27T00:04:44.279858" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-27T00:04:43.278288" elapsed="1.001570"/>
+</kw>
+<kw name="Reset Filters" owner="overviewHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-27T00:04:44.281875" elapsed="0.243050"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-27T00:04:44.527019" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/button[2]'.</msg>
+<arg>${RESET_FILTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-27T00:04:44.526024" elapsed="0.804144"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:44.280883" elapsed="1.049834"/>
+</kw>
+<status status="PASS" start="2024-11-27T00:04:38.328405" elapsed="7.003349"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-11-27T00:04:45.338285" elapsed="2.443326"/>
+</kw>
 <doc>Test suite for required documents creation and filters check</doc>
-<status status="FAIL" start="2024-11-02T18:32:15.391779" elapsed="118.554888"/>
+<status status="PASS" start="2024-11-27T00:03:47.512021" elapsed="60.269590"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="Upload Users documents">Upload Users documents</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Competence Overview Suite">Competence Overview Suite</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-11-02T18:32:15.654200" level="WARN">Error in file 'C:\Users\SafetyTracker\resources\HELPERS\common.resource' on line 35: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

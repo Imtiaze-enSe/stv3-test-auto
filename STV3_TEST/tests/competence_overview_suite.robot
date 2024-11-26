@@ -21,7 +21,6 @@ Test Topic Filter
     Apply Resource Filter         ${SELECT_TOPIC_BTN}               ${SEARCHED_TOPIC_NAME}
     Verify Topic Filter           ${SEARCHED_TOPIC_NAME}    
     Sleep    1s
-    Reset Filters
 Test Certificate Filter
     Apply Resource Filter          ${SELECT_CERTIFICATE_BTN}         ${SEARCHED_CERTIFICATE}
     Verify Certificate Filter      ${SEARCHED_CERTIFICATE}    

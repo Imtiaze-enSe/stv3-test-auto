@@ -32,7 +32,7 @@ Login To Application
 
 Generate Random String
     ${random}=    Evaluate    ''.join([chr(random.randint(65, 90)) for _ in range(8)])    random
-    [Return]    Test_${random}
+    RETURN        Test_${random}
 Wait For Success Message
     [Arguments]    ${expected_message}
     Page Should Contain            ${expected_message}
