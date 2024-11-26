@@ -29,7 +29,7 @@ jobs:
       if: always()
       with:
         name: test-reports
-        path: tests/output # Ensure this path matches where reports are saved
+        path: STV3_TEST/output
 
   report:
     if: always()
@@ -43,7 +43,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: test-reports
-        path: tests/output # Ensure the downloaded artifact matches the upload path
+        path: STV3_TEST/output
 
     - name: Generate Report
       uses: joonvena/robotframework-reporter-action@v2
