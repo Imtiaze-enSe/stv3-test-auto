@@ -1,717 +1,1665 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-11-27T18:07:18.883672" rpa="false" schemaversion="5">
-<suite id="s1" name="Required Documents Suite" source="C:\Users\Hp\stv3-test-auto\STV3_TEST\tests\required_documents_suite.robot">
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-12-07T23:24:43.366576" rpa="false" schemaversion="5">
+<suite id="s1" name="Categories-Suite" source="C:\Users\Hp\stv3-test-auto\STV3_TEST\tests-suits\categories-suite.robot">
 <kw name="Open Browser To Application" owner="common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:19.371995" level="INFO">Opening browser 'chrome' to base url 'https://stv3ca-prod.netlify.app/login'.</msg>
+<msg time="2024-12-07T23:24:44.730204" level="INFO">Opening browser 'chrome' to base url 'https://preprodenv.safetytracker.app/login'.</msg>
 <arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-27T18:07:19.371995" elapsed="6.446552"/>
+<status status="PASS" start="2024-12-07T23:24:44.729139" elapsed="10.129290"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.819550" elapsed="0.031128"/>
+<status status="PASS" start="2024-12-07T23:24:54.859675" elapsed="0.164545"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.851704" elapsed="0.002983"/>
+<status status="PASS" start="2024-12-07T23:24:55.028262" elapsed="0.005263"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.855716" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-07T23:24:55.034527" elapsed="0.000996"/>
 </kw>
 <doc>Opens the browser and sets up Selenium</doc>
-<status status="PASS" start="2024-11-27T18:07:19.370997" elapsed="6.484719"/>
+<status status="PASS" start="2024-12-07T23:24:44.725895" elapsed="10.309628"/>
 </kw>
-<test id="s1-t1" name="Create a New Document" line="12">
-<kw name="Generate Random String" owner="common">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-11-27T18:07:25.858706" level="INFO">${random} = ZTRDZYSZ</msg>
-<var>${random}</var>
-<arg>''.join([chr(random.randint(65, 90)) for _ in range(8)])</arg>
-<arg>random</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.857684" elapsed="0.001022"/>
-</kw>
-<return>
-<value>Test_${random}</value>
-<status status="PASS" start="2024-11-27T18:07:25.858706" elapsed="0.000000"/>
-</return>
-<msg time="2024-11-27T18:07:25.858706" level="INFO">${random_string} = Test_ZTRDZYSZ</msg>
-<var>${random_string}</var>
-<status status="PASS" start="2024-11-27T18:07:25.857684" elapsed="0.001022"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-27T18:07:25.859681" level="INFO">${created_document_name} = Doc_Test_ZTRDZYSZ</msg>
-<var>${created_document_name}</var>
-<arg>Doc_${random_string}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.859681" elapsed="0.001100"/>
-</kw>
+<test id="s1-t1" name="Create New Category" line="14">
 <kw name="Login To Application" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_FORM}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:25.864681" elapsed="0.320506"/>
+<status status="PASS" start="2024-12-07T23:24:55.041526" elapsed="0.642867"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${USERNAME_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:26.185187" elapsed="0.252674"/>
+<status status="PASS" start="2024-12-07T23:24:55.685848" elapsed="0.299330"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:26.438401" level="INFO">Typing text 'supadmin@imense.net' into text field 'xpath=//input[@id="Enter your email address"]'.</msg>
+<msg time="2024-12-07T23:24:55.988165" level="INFO">Typing text 'supadmin@imense.net' into text field 'xpath=//input[@id="Enter your email address"]'.</msg>
 <arg>${USERNAME_INPUT}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:26.438401" elapsed="0.599853"/>
+<status status="PASS" start="2024-12-07T23:24:55.986168" elapsed="0.969133"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:27.038254" level="INFO">Typing password into text field 'xpath=//input[@id="Enter your password"]'.</msg>
-<msg time="2024-11-27T18:07:27.300488" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-12-07T23:24:56.958047" level="INFO">Typing password into text field 'xpath=//input[@id="Enter your password"]'.</msg>
+<msg time="2024-12-07T23:24:57.321742" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:27.038254" elapsed="0.479780"/>
+<status status="PASS" start="2024-12-07T23:24:56.956958" elapsed="0.970936"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:27.518540" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<msg time="2024-12-07T23:24:57.929969" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:27.518540" elapsed="0.309721"/>
+<status status="PASS" start="2024-12-07T23:24:57.928973" elapsed="0.559318"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>${LOADING_SPINNER}</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:27.828261" elapsed="10.151109"/>
+<status status="PASS" start="2024-12-07T23:24:58.489314" elapsed="10.117898"/>
 </kw>
 <kw name="Wait Until Location Is" owner="common">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:38.093188" level="INFO">Current location is 'https://stv3ca-prod.netlify.app/instant-observations?date=this_week'.</msg>
+<msg time="2024-12-07T23:25:08.724223" level="INFO">Current location is 'https://preprodenv.safetytracker.app/instant-observations?date=this_week'.</msg>
 <arg>${expected_url}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-11-27T18:07:37.980392" elapsed="0.112796"/>
+<status status="PASS" start="2024-12-07T23:25:08.609382" elapsed="0.114841"/>
 </kw>
 <arg>${TIMEOUT}</arg>
 <arg>1s</arg>
 <arg>Location Should Be</arg>
 <arg>${expected_url}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2024-11-27T18:07:37.980392" elapsed="0.112796"/>
+<status status="PASS" start="2024-12-07T23:25:08.608235" elapsed="0.116508"/>
 </kw>
 <arg>${DASHBOARD_URL}</arg>
-<status status="PASS" start="2024-11-27T18:07:37.979370" elapsed="0.113818"/>
+<status status="PASS" start="2024-12-07T23:25:08.607212" elapsed="0.117531"/>
 </kw>
 <arg>${VALID_USERNAME}</arg>
 <arg>${VALID_PASSWORD}</arg>
 <doc>Performs login with given credentials</doc>
-<status status="PASS" start="2024-11-27T18:07:25.862828" elapsed="12.230360"/>
+<status status="PASS" start="2024-12-07T23:24:55.038526" elapsed="13.686217"/>
 </kw>
-<kw name="Navigate To Required Documents Section" owner="requiredDocHelpers">
 <kw name="Navigate To Categories Section" owner="categoriesHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SIDEBAR_ELEMENT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:38.094235" elapsed="0.231046"/>
+<status status="PASS" start="2024-12-07T23:25:08.726764" elapsed="0.261727"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:38.327330" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]'.</msg>
+<msg time="2024-12-07T23:25:08.990578" level="INFO">Clicking element 'xpath=//body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]'.</msg>
 <arg>${SIDEBAR_ELEMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:38.326337" elapsed="0.353483"/>
+<status status="PASS" start="2024-12-07T23:25:08.988491" elapsed="0.422547"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SIDEBAR_COMPETENCE_LINK}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:38.679820" elapsed="0.233495"/>
+<status status="PASS" start="2024-12-07T23:25:09.411556" elapsed="0.249165"/>
 </kw>
 <kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:38.915366" level="INFO">Simulating Mouse Over on element 'xpath=//p[contains(text(),'Competence')]'.</msg>
+<msg time="2024-12-07T23:25:09.661821" level="INFO">Simulating Mouse Over on element 'xpath=//p[contains(text(),'Competence')]'.</msg>
 <arg>${SIDEBAR_COMPETENCE_LINK}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:38.914374" elapsed="0.532268"/>
+<status status="PASS" start="2024-12-07T23:25:09.661311" elapsed="0.508859"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SIDEBAR_CATEGORIES_SETTINGS_LINK}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:39.447701" elapsed="0.278247"/>
+<status status="PASS" start="2024-12-07T23:25:10.170170" elapsed="0.260201"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:39.728058" level="INFO">Clicking element 'xpath=//p[contains(text(),'Competence')]/following::i[@class="sidebar__header-settings-sublink"]'.</msg>
+<msg time="2024-12-07T23:25:10.432390" level="INFO">Clicking element 'xpath=//p[contains(text(),'Competence')]/following::i[@class="sidebar__header-settings-sublink"]'.</msg>
 <arg>${SIDEBAR_CATEGORIES_SETTINGS_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:39.727031" elapsed="0.383127"/>
+<status status="PASS" start="2024-12-07T23:25:10.431384" elapsed="0.595878"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${CATEGORY_LIST}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-11-27T18:07:40.110158" elapsed="0.437117"/>
+<status status="PASS" start="2024-12-07T23:25:11.028341" elapsed="0.630915"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:40.547842" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]'.</msg>
+<msg time="2024-12-07T23:25:11.661306" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]'.</msg>
 <arg>${SIDEBAR_CROSS_ICON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:40.547842" elapsed="0.350547"/>
+<status status="PASS" start="2024-12-07T23:25:11.660305" elapsed="0.652075"/>
 </kw>
-<status status="PASS" start="2024-11-27T18:07:38.094235" elapsed="2.804154"/>
+<status status="PASS" start="2024-12-07T23:25:08.725764" elapsed="3.587638"/>
 </kw>
+<kw name="Click Add New Category Button" owner="categoriesHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${REQUIRED_DOC_TAB}</arg>
+<arg>${ADD_CATEGORY_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:40.898389" elapsed="0.227068"/>
+<status status="PASS" start="2024-12-07T23:25:12.316402" elapsed="0.288307"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:41.125457" level="INFO">Clicking element 'xpath=//div[contains(text(),'Required documents')]'.</msg>
-<arg>${REQUIRED_DOC_TAB}</arg>
+<msg time="2024-12-07T23:25:12.606757" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]'.</msg>
+<arg>${ADD_CATEGORY_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:41.125457" elapsed="0.337295"/>
+<status status="PASS" start="2024-12-07T23:25:12.605765" elapsed="0.537048"/>
 </kw>
-<kw name="Wait Until Location Is" owner="common">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:41.572908" level="INFO">Current location is 'https://stv3ca-prod.netlify.app/competence-settings?activeTab=2'.</msg>
-<arg>${expected_url}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-11-27T18:07:41.463805" elapsed="0.109103"/>
+<status status="PASS" start="2024-12-07T23:25:12.315405" elapsed="0.827408"/>
 </kw>
-<arg>${TIMEOUT}</arg>
-<arg>1s</arg>
-<arg>Location Should Be</arg>
-<arg>${expected_url}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2024-11-27T18:07:41.462752" elapsed="0.110156"/>
+<kw name="Generate Random String" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-12-07T23:25:13.146916" level="INFO">${random} = QHKHQGTY</msg>
+<var>${random}</var>
+<arg>''.join([chr(random.randint(65, 90)) for _ in range(8)])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-12-07T23:25:13.145916" elapsed="0.002001"/>
 </kw>
-<arg>${REQUIRED_DOC_PAGE_URL}</arg>
-<status status="PASS" start="2024-11-27T18:07:41.462752" elapsed="0.110156"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-27T18:07:43.574439" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-27T18:07:41.573920" elapsed="2.000519"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:07:38.093188" elapsed="5.482284"/>
-</kw>
-<kw name="Click Add New Doc button" owner="requiredDocHelpers">
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${ADD_NEW_DOC_BTN}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-11-27T18:07:43.577525" elapsed="0.410173"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:43.989694" level="INFO">Clicking element 'xpath=//button[@class='add-btn']'.</msg>
-<arg>${ADD_NEW_DOC_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:43.988703" elapsed="0.344931"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:07:43.576525" elapsed="0.757109"/>
-</kw>
-<kw name="Fill out the Addition Form" owner="requiredDocHelpers">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ADD_DOC_MODAL}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:44.334650" elapsed="0.227335"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${DOC_TITLE_INPUT}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-11-27T18:07:44.562208" elapsed="0.353582"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:44.917889" level="INFO">Typing text 'Doc_Test_ZTRDZYSZ' into text field 'xpath=//input[@placeholder="Enter document title"]'.</msg>
-<arg>${DOC_TITLE_INPUT}</arg>
-<arg>${doc_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:44.916907" elapsed="0.566900"/>
-</kw>
-<kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:45.485837" level="INFO">Sending C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\doc-icon.png to browser.</msg>
-<arg>${DOC_UPLOAD_INPUT}</arg>
-<arg>${PATH_TO_DOC_ICON}</arg>
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:45.484839" elapsed="0.312904"/>
-</kw>
-<kw name="Select Assign To Option" owner="requiredDocHelpers">
-<kw name="Open Assign To Dropdown" owner="requiredDocHelpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:45.799270" level="INFO">Clicking element 'xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
-<arg>${ASSIGN_TO_DROPDOWN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:45.799270" elapsed="0.339786"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:07:45.798256" elapsed="0.340800"/>
+<return>
+<value>Test_${random}</value>
+<status status="PASS" start="2024-12-07T23:25:13.147917" elapsed="0.000000"/>
+</return>
+<msg time="2024-12-07T23:25:13.148921" level="INFO">${random_string} = Test_QHKHQGTY</msg>
+<var>${random_string}</var>
+<status status="PASS" start="2024-12-07T23:25:13.144916" elapsed="0.004005"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-27T18:07:46.139056" level="INFO">${option_locator} = xpath=//div[contains(text(), 'Internal')]</msg>
-<var>${option_locator}</var>
-<arg>xpath=//div[contains(text(), '${option_text}')]</arg>
+<msg time="2024-12-07T23:25:13.151939" level="INFO">${created_category_name} = CAT_Test_QHKHQGTY</msg>
+<var>${created_category_name}</var>
+<arg>${PREFIX}${random_string}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.139056" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-07T23:25:13.149863" elapsed="0.002076"/>
 </kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CREATED_CATEGORIES}</arg>
+<arg>${created_category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-12-07T23:25:13.154861" elapsed="0.000994"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:25:13.159860" level="INFO">${GLOBAL_CATEGORY_NAME} = CAT_Test_QHKHQGTY</msg>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<arg>${created_category_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:25:13.157861" elapsed="0.003000"/>
+</kw>
+<kw name="Create New Category" owner="categoriesHelpers">
+<kw name="Input Category Details" owner="categoriesHelpers">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${option_locator}</arg>
+<arg>${CATEGORY_NAME_INPUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.140109" elapsed="0.231270"/>
+<status status="PASS" start="2024-12-07T23:25:13.167868" elapsed="0.304262"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-11-27T18:07:46.371379" level="INFO">xpath=//div[contains(text(), 'Internal')]</msg>
-<arg>${option_locator}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.371379" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:13.474014" level="INFO">Typing text 'CAT_Test_QHKHQGTY' into text field 'xpath=(//div[@class="settings-icon-input__content"]//input[1])[1]'.</msg>
+<arg>${CATEGORY_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:13.472922" elapsed="1.018968"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:46.372398" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Internal')]'.</msg>
-<arg>${option_locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.371379" elapsed="0.302610"/>
+<arg>name=${name}</arg>
+<status status="PASS" start="2024-12-07T23:25:13.164861" elapsed="1.327722"/>
 </kw>
-<arg>Internal</arg>
-<status status="PASS" start="2024-11-27T18:07:45.798256" elapsed="0.875733"/>
+<kw name="Submit Category Form" owner="categoriesHelpers">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:14.495729" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-12-07T23:25:14.495878" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-12-07T23:25:14.495878" level="INFO">Releasing special key ENTER.</msg>
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:14.494418" elapsed="0.171221"/>
 </kw>
-<kw name="Verify Assign To Selection" owner="requiredDocHelpers">
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:46.899359" level="INFO">${actual_value} = internal</msg>
-<var>${actual_value}</var>
-<arg>${ASSIGN_TO_HIDDEN_INPUT}</arg>
-<arg>value</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.674997" elapsed="0.225399"/>
+<status status="PASS" start="2024-12-07T23:25:14.493249" elapsed="0.173097"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_value}</arg>
-<arg>${expected_value}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.901408" elapsed="0.000986"/>
-</kw>
-<arg>internal</arg>
-<status status="PASS" start="2024-11-27T18:07:46.673989" elapsed="0.228405"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-11-27T18:07:47.902892" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-11-27T18:07:46.902394" elapsed="1.000498"/>
-</kw>
-<arg>${created_document_name}</arg>
-<status status="PASS" start="2024-11-27T18:07:44.334650" elapsed="3.568242"/>
-</kw>
-<kw name="Submit the Form" owner="requiredDocHelpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:07:47.903943" level="INFO">Clicking element 'xpath=//button[contains(text(),'Save')]'.</msg>
-<arg>${DOC_SAVE_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:07:47.903943" elapsed="0.350116"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:07:47.902892" elapsed="0.351167"/>
+<arg>${created_category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:13.162860" elapsed="1.504098"/>
 </kw>
 <kw name="Success Message Should Be Visible" owner="common">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:09.015303" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-27T18:08:09.015303" level="FAIL">Page should have contained text 'Document has been added successfully' but did not.</msg>
+<msg time="2024-12-07T23:25:15.098987" level="INFO">Current page contains text 'Category added successfully'.</msg>
 <arg>${expected_message}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2024-11-27T18:07:48.255328" elapsed="20.812939">Page should have contained text 'Document has been added successfully' but did not.</status>
+<status status="PASS" start="2024-12-07T23:25:14.670990" elapsed="0.427997"/>
 </kw>
-<arg>Document has been added successfully</arg>
-<status status="FAIL" start="2024-11-27T18:07:48.254059" elapsed="20.815222">Page should have contained text 'Document has been added successfully' but did not.</status>
+<arg>Category added successfully</arg>
+<status status="PASS" start="2024-12-07T23:25:14.669212" elapsed="0.430763"/>
 </kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<arg>${GLOBAL_DOC_NAME}</arg>
-<arg>${created_document_name}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2024-11-27T18:08:09.069422" elapsed="0.000000"/>
+<kw name="Category Should Exist In List" owner="categoriesHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:25:15.105047" elapsed="0.155302"/>
 </kw>
-<doc>Test the creation of a new document</doc>
+<arg>${created_category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:15.103019" elapsed="0.157330"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Category added successfully</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:25:15.262438" elapsed="17.969933"/>
+</kw>
+<doc>Test the creation of a new category</doc>
+<tag>categories</tag>
 <tag>create</tag>
-<tag>DOCUMENTS</tag>
 <tag>smoke</tag>
-<status status="FAIL" start="2024-11-27T18:07:25.856684" elapsed="43.212738">Page should have contained text 'Document has been added successfully' but did not.</status>
+<status status="PASS" start="2024-12-07T23:24:55.036533" elapsed="38.196891"/>
 </test>
-<test id="s1-t2" name="Test Search Filter" line="25">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2024-11-27T18:08:09.073473" level="INFO">${search_term} = None</msg>
-<var>${search_term}</var>
-<arg>${GLOBAL_DOC_NAME}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2024-11-27T18:08:09.071438" elapsed="0.002035"/>
-</kw>
-<kw name="Apply Search Filter" owner="requiredDocHelpers">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:09.074473" level="INFO">Typing text 'None' into text field 'xpath=//input[@placeholder="Search by document name..."]'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>${search_term}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:09.074473" elapsed="0.474977"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:09.551115" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:09.550017" elapsed="0.736452"/>
-</kw>
-<arg>${search_term}</arg>
-<status status="PASS" start="2024-11-27T18:08:09.074473" elapsed="1.211996"/>
-</kw>
-<kw name="Verify Filter Results" owner="common">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:20.897037" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-27T18:08:20.898036" level="FAIL">Text 'None' did not appear in 10 seconds.</msg>
-<arg>${expected_result}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2024-11-27T18:08:10.287519" elapsed="10.631202">Text 'None' did not appear in 10 seconds.</status>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${unwanted_result}' != '${EMPTY}'</arg>
-<arg>Page Should Not Contain</arg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2024-11-27T18:08:20.919674" elapsed="0.000000"/>
-</kw>
-<arg>${search_term}</arg>
-<status status="FAIL" start="2024-11-27T18:08:10.286469" elapsed="10.633205">Text 'None' did not appear in 10 seconds.</status>
-</kw>
-<kw name="Reset Filters" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:08:20.919674" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-11-27T18:08:09.071438" elapsed="11.848236">Text 'None' did not appear in 10 seconds.</status>
-</test>
-<test id="s1-t3" name="Test Document Type Filter" line="31">
-<kw name="Select Document Type" owner="requiredDocHelpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:20.922168" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
-<arg>xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:20.922168" elapsed="0.301821"/>
-</kw>
+<test id="s1-t2" name="Edit Existing Category" line="29">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-27T18:08:21.223989" level="INFO">${option_locator} = xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]</msg>
-<var>${option_locator}</var>
-<arg>xpath=//div[contains(text(), '${doc_type}') and not(contains(text(), 'Foreign'))]</arg>
+<msg time="2024-12-07T23:25:33.238466" level="INFO">${edited_category_name} = Edited Category</msg>
+<var>${edited_category_name}</var>
+<arg>Edited Category</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-27T18:08:21.223989" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-07T23:25:33.238466" elapsed="0.000994"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-12-07T23:25:33.240465" level="INFO">${selected_category} = CAT_Test_QHKHQGTY</msg>
+<var>${selected_category}</var>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-12-07T23:25:33.239460" elapsed="0.001005"/>
+</kw>
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:33.243466" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'CAT_Test_QHKHQGTY')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:33.242459" elapsed="0.579414"/>
+</kw>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:25:33.241458" elapsed="0.581507"/>
+</kw>
+<kw name="Click Edit Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:33.832906" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'CAT_Test_QHKHQGTY')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:33.830908" elapsed="0.549360"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:33.828920" elapsed="0.552382"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${option_locator}</arg>
-<arg>timeout=10s</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:08:21.223989" elapsed="0.249707"/>
+<status status="PASS" start="2024-12-07T23:25:34.382299" elapsed="0.287985"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-11-27T18:08:21.473696" level="INFO">xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]</msg>
-<arg>${option_locator}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-27T18:08:21.473696" elapsed="0.000000"/>
+<kw name="Click Edit Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:34.790770" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.91")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:34.671936" elapsed="0.118834"/>
 </kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:34.792827" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.91")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:25:34.791829" elapsed="0.201709"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:34.670872" elapsed="0.322666"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:25:33.826904" elapsed="1.167680"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:25:33.825915" elapsed="1.168669"/>
+</kw>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:25:33.823920" elapsed="1.170664"/>
+</kw>
+<kw name="Input Resource Details With Description" owner="categoriesHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:34.998584" elapsed="0.270301"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:21.474812" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]'.</msg>
-<arg>${option_locator}</arg>
+<msg time="2024-12-07T23:25:35.270432" level="INFO">Clicking element 'xpath=//input[@id='name']'.</msg>
+<arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:21.473696" elapsed="0.298937"/>
+<status status="PASS" start="2024-12-07T23:25:35.270432" elapsed="0.521883"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:21.772633" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:21.772633" elapsed="0.678016"/>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:35.794936" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:25:35.794936" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:25:35.795473" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:25:35.795648" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:35.793481" elapsed="0.191611"/>
 </kw>
-<arg>Internal</arg>
-<status status="PASS" start="2024-11-27T18:08:20.922168" elapsed="1.528481"/>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:35.988170" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:25:35.989170" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:25:35.989170" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:35.986116" elapsed="0.155559"/>
 </kw>
-<kw name="Verify Filter Results" owner="common">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${expected_result}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-11-27T18:08:22.450649" elapsed="0.118255"/>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:25:35.268885" elapsed="0.872790"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Page Should Not Contain" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:42.946592" level="INFO">Current page does not contain text 'External'.</msg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Verifies the current page does not contain ``text``.</doc>
-<status status="PASS" start="2024-11-27T18:08:22.570956" elapsed="20.375636"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:36.142682" level="INFO">Typing text 'Edited Category' into text field 'xpath=//input[@id='name']'.</msg>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:36.141675" elapsed="0.978863"/>
 </kw>
-<arg>'${unwanted_result}' != '${EMPTY}'</arg>
-<arg>Page Should Not Contain</arg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-11-27T18:08:22.568904" elapsed="20.378789"/>
-</kw>
-<arg>Internal</arg>
-<arg>External</arg>
-<status status="PASS" start="2024-11-27T18:08:22.450649" elapsed="20.497044"/>
-</kw>
-<kw name="Reset Filters" owner="requiredDocHelpers">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:42.951728" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[4]/button[1]'.</msg>
-<arg>${RESET_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:42.950735" elapsed="0.783109"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:08:42.949734" elapsed="0.784110"/>
-</kw>
-<kw name="Select Document Type" owner="requiredDocHelpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:43.734299" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
-<arg>xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:43.734299" elapsed="0.320726"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-27T18:08:44.055025" level="INFO">${option_locator} = xpath=//div[contains(text(), 'External') and not(contains(text(), 'Foreign'))]</msg>
-<var>${option_locator}</var>
-<arg>xpath=//div[contains(text(), '${doc_type}') and not(contains(text(), 'Foreign'))]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-27T18:08:44.055025" elapsed="0.000000"/>
+<kw name="Upload Resource Icon" owner="categoriesHelpers">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2024-12-07T23:25:37.133477" level="INFO" html="true">File '&lt;a href="file://C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\icon-cat.png"&gt;C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\icon-cat.png&lt;/a&gt;' exists.</msg>
+<arg>${PATH_TO_ICON}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2024-12-07T23:25:37.123010" elapsed="0.010834"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${option_locator}</arg>
-<arg>timeout=10s</arg>
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:08:44.055025" elapsed="0.248765"/>
+<status status="PASS" start="2024-12-07T23:25:37.134588" elapsed="0.297982"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-11-27T18:08:44.304847" level="INFO">xpath=//div[contains(text(), 'External') and not(contains(text(), 'Foreign'))]</msg>
-<arg>${option_locator}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-27T18:08:44.304847" elapsed="0.000993"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:44.306841" level="INFO">Clicking element 'xpath=//div[contains(text(), 'External') and not(contains(text(), 'Foreign'))]'.</msg>
-<arg>${option_locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:44.305840" elapsed="0.346920"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:08:44.652760" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:08:44.652760" elapsed="0.728753"/>
-</kw>
-<arg>External</arg>
-<status status="PASS" start="2024-11-27T18:08:43.734299" elapsed="1.647214"/>
-</kw>
-<kw name="Verify Filter Results" owner="common">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${expected_result}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-11-27T18:08:45.382035" elapsed="0.114612"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Page Should Not Contain" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:05.889291" level="INFO">Current page does not contain text 'Internal'.</msg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Verifies the current page does not contain ``text``.</doc>
-<status status="PASS" start="2024-11-27T18:08:45.497745" elapsed="20.391546"/>
-</kw>
-<arg>'${unwanted_result}' != '${EMPTY}'</arg>
-<arg>Page Should Not Contain</arg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-11-27T18:08:45.497156" elapsed="20.393234"/>
-</kw>
-<arg>External</arg>
-<arg>Internal</arg>
-<status status="PASS" start="2024-11-27T18:08:45.382035" elapsed="20.508355"/>
-</kw>
-<kw name="Reset Filters" owner="requiredDocHelpers">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:05.893457" level="INFO">Clicking button 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[4]/button[1]'.</msg>
-<arg>${RESET_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:05.892461" elapsed="0.756862"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:09:05.891410" elapsed="0.758159"/>
-</kw>
-<status status="PASS" start="2024-11-27T18:08:20.921152" elapsed="45.728417"/>
-</test>
-<test id="s1-t4" name="Test Combined Filters" line="41">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2024-11-27T18:09:06.654636" level="INFO">${search_term} = None</msg>
-<var>${search_term}</var>
-<arg>${GLOBAL_DOC_NAME}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2024-11-27T18:09:06.651601" elapsed="0.003035"/>
-</kw>
-<kw name="Apply Search Filter" owner="requiredDocHelpers">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:06.654636" level="INFO">Typing text 'None' into text field 'xpath=//input[@placeholder="Search by document name..."]'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>${search_term}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:06.654636" elapsed="0.463566"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:07.118202" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:07.118202" elapsed="0.679737"/>
-</kw>
-<arg>${search_term}</arg>
-<status status="PASS" start="2024-11-27T18:09:06.654636" elapsed="1.143303"/>
-</kw>
-<kw name="Select Document Type" owner="requiredDocHelpers">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:07.798343" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
-<arg>xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:07.798343" elapsed="0.289588"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-11-27T18:09:08.088443" level="INFO">${option_locator} = xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]</msg>
-<var>${option_locator}</var>
-<arg>xpath=//div[contains(text(), '${doc_type}') and not(contains(text(), 'Foreign'))]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-11-27T18:09:08.088443" elapsed="0.000000"/>
-</kw>
+<kw name="UPLOAD FILE" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${option_locator}</arg>
-<arg>timeout=10s</arg>
+<arg>${UPLOAD_FILE_FIELD}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-11-27T18:09:08.088443" elapsed="0.224409"/>
+<status status="PASS" start="2024-12-07T23:25:37.434656" elapsed="0.265837"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-11-27T18:09:08.313905" level="INFO">xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]</msg>
-<arg>${option_locator}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-27T18:09:08.312852" elapsed="0.001053"/>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:37.702835" level="INFO">Sending C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\icon-cat.png to browser.</msg>
+<arg>${UPLOAD_FILE_INPUT}</arg>
+<arg>${FILE_NAME}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:37.700493" elapsed="0.368296"/>
 </kw>
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
+<arg>${UPLOAD_CAT_ICON_INPUT}</arg>
+<arg>${PATH_TO_ICON}</arg>
+<status status="PASS" start="2024-12-07T23:25:37.433667" elapsed="0.635665"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Drag and drop your icon</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:25:38.069332" elapsed="10.155775"/>
+</kw>
+<arg>${path_to_icon}</arg>
+<status status="PASS" start="2024-12-07T23:25:37.121294" elapsed="11.104876"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:08.315899" level="INFO">Clicking element 'xpath=//div[contains(text(), 'Internal') and not(contains(text(), 'Foreign'))]'.</msg>
-<arg>${option_locator}</arg>
+<msg time="2024-12-07T23:25:48.229173" level="INFO">Clicking element 'xpath=//textarea[@id='description']'.</msg>
+<arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:08.314899" elapsed="0.365988"/>
+<status status="PASS" start="2024-12-07T23:25:48.227237" elapsed="0.518692"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:08.681452" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:08.681452" elapsed="0.709082"/>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:48.749332" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:25:48.749332" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:25:48.749332" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:25:48.750414" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:48.747140" elapsed="0.147755"/>
 </kw>
-<arg>Internal</arg>
-<status status="PASS" start="2024-11-27T18:09:07.798343" elapsed="1.592191"/>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:48.898027" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:25:48.898027" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:25:48.899040" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:48.896966" elapsed="0.129116"/>
 </kw>
-<kw name="Verify Filter Results" owner="common">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:19.943042" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-27T18:09:19.943042" level="FAIL">Text 'None' did not appear in 10 seconds.</msg>
-<arg>${expected_result}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2024-11-27T18:09:09.391394" elapsed="10.552649">Text 'None' did not appear in 10 seconds.</status>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:25:48.226170" elapsed="0.800437"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${unwanted_result}' != '${EMPTY}'</arg>
-<arg>Page Should Not Contain</arg>
-<arg>${unwanted_result}</arg>
-<arg>message=Page should not contain '${unwanted_result}'</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2024-11-27T18:09:19.944043" elapsed="0.000998"/>
-</kw>
-<arg>${search_term}</arg>
-<status status="FAIL" start="2024-11-27T18:09:09.390534" elapsed="10.554507">Text 'None' did not appear in 10 seconds.</status>
-</kw>
-<kw name="Verify Filter Results" owner="common">
-<arg>Internal</arg>
-<status status="NOT RUN" start="2024-11-27T18:09:19.945041" elapsed="0.000000"/>
-</kw>
-<kw name="Reset Filters" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:09:19.946044" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-11-27T18:09:06.651601" elapsed="13.294443">Text 'None' did not appear in 10 seconds.</status>
-</test>
-<test id="s1-t5" name="Delete Document" line="49">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2024-11-27T18:09:19.950200" level="INFO">${doc_name} = None</msg>
-<var>${doc_name}</var>
-<arg>${GLOBAL_DOC_NAME}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2024-11-27T18:09:19.948206" elapsed="0.001994"/>
-</kw>
-<kw name="Apply Search Filter" owner="requiredDocHelpers">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:19.951200" level="INFO">Typing text 'None' into text field 'xpath=//input[@placeholder="Search by document name..."]'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>${search_term}</arg>
+<msg time="2024-12-07T23:25:49.029638" level="INFO">Typing text 'Updated Category Description' into text field 'xpath=//textarea[@id='description']'.</msg>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<arg>${description}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:19.951200" elapsed="0.436320"/>
+<status status="PASS" start="2024-12-07T23:25:49.027640" elapsed="0.938838"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:20.388529" level="INFO">Clicking button 'xpath=//Button[contains(text(), 'Apply filter')]'.</msg>
-<arg>${APPLY_FILTER_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-27T18:09:20.387520" elapsed="0.624102"/>
+<arg>name=${edited_category_name}</arg>
+<arg>path_to_icon=${PATH_TO_CAT_ICON}</arg>
+<arg>description=Updated Category Description</arg>
+<status status="PASS" start="2024-12-07T23:25:34.996583" elapsed="14.969895"/>
 </kw>
-<arg>${doc_name}</arg>
-<status status="PASS" start="2024-11-27T18:09:19.951200" elapsed="1.060935"/>
+<kw name="Submit Edit Resource Form" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:49.969570" level="INFO">Clicking element 'xpath=//button[contains(text(),'Save')]'.</msg>
+<arg>xpath=//button[contains(text(),'Save')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:49.968569" elapsed="0.539723"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2024-11-27T18:09:31.569290" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-11-27T18:09:31.570291" level="FAIL">Text 'None' did not appear in 5 seconds.</msg>
-<arg>${doc_name}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2024-11-27T18:09:21.013150" elapsed="10.560196">Text 'None' did not appear in 5 seconds.</status>
-</kw>
-<kw name="Select Document By Name" owner="requiredDocHelpers">
-<arg>${doc_name}</arg>
-<status status="NOT RUN" start="2024-11-27T18:09:31.574290" elapsed="0.000000"/>
-</kw>
-<kw name="Verify Delete Button Appears" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:09:31.576287" elapsed="0.000000"/>
-</kw>
-<kw name="Click Delete Button" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:09:31.577293" elapsed="0.000000"/>
-</kw>
-<kw name="Verify Confirmation Dialog" owner="requiredDocHelpers">
-<arg>${doc_name}</arg>
-<status status="NOT RUN" start="2024-11-27T18:09:31.578293" elapsed="0.001075"/>
-</kw>
-<kw name="Confirm Deletion" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:09:31.580372" elapsed="0.000000"/>
-</kw>
-<kw name="Delete Document After Confirmation" owner="requiredDocHelpers">
-<status status="NOT RUN" start="2024-11-27T18:09:31.581373" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-07T23:25:49.967521" elapsed="0.540771"/>
 </kw>
 <kw name="Success Message Should Be Visible" owner="common">
-<arg>The Document has been deleted successfully</arg>
-<status status="NOT RUN" start="2024-11-27T18:09:31.583317" elapsed="0.000000"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:51.236458" level="INFO">Current page contains text 'Category updated successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:25:50.511365" elapsed="0.725093"/>
 </kw>
-<kw name="Verify Document Deleted" owner="requiredDocHelpers">
-<arg>${doc_name}</arg>
-<status status="NOT RUN" start="2024-11-27T18:09:31.584354" elapsed="0.000000"/>
+<arg>Category updated successfully</arg>
+<status status="PASS" start="2024-12-07T23:25:50.510346" elapsed="0.726112"/>
 </kw>
-<status status="FAIL" start="2024-11-27T18:09:19.947176" elapsed="11.638388">Text 'None' did not appear in 5 seconds.</status>
+<kw name="Category Should Exist In List" owner="categoriesHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:25:51.240509" elapsed="0.161124"/>
+</kw>
+<arg>${edited_category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:51.238564" elapsed="0.163596"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:25:51.405270" level="INFO">${GLOBAL_CATEGORY_NAME} = Edited Category</msg>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<arg>${edited_category_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:25:51.403206" elapsed="0.002064"/>
+</kw>
+<doc>Test the editing of an existing category</doc>
+<tag>categories</tag>
+<tag>edit</tag>
+<status status="PASS" start="2024-12-07T23:25:33.236405" elapsed="18.170800"/>
+</test>
+<test id="s1-t3" name="Create Topic For Category" line="42">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-12-07T23:25:51.416211" level="INFO">${edited_category_name} = Edited Category</msg>
+<var>${edited_category_name}</var>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-12-07T23:25:51.414219" elapsed="0.001992"/>
+</kw>
+<kw name="Select Category To Create Certificate" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:51.421218" level="INFO">Clicking element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Category')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:51.420218" elapsed="0.610320"/>
+</kw>
+<arg>${edited_category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:51.418200" elapsed="0.613321"/>
+</kw>
+<kw name="Click Add New Topic Button" owner="topicsHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TOPIC_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:52.034521" elapsed="0.521277"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:52.557876" level="INFO">Clicking element 'xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]'.</msg>
+<arg>${ADD_TOPIC_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:52.556895" elapsed="0.564281"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:25:52.033523" elapsed="1.087653"/>
+</kw>
+<kw name="Generate Random String" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-12-07T23:25:53.125274" level="INFO">${random} = PSOPCSEO</msg>
+<var>${random}</var>
+<arg>''.join([chr(random.randint(65, 90)) for _ in range(8)])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-12-07T23:25:53.124227" elapsed="0.001047"/>
+</kw>
+<return>
+<value>Test_${random}</value>
+<status status="PASS" start="2024-12-07T23:25:53.126275" elapsed="0.000000"/>
+</return>
+<msg time="2024-12-07T23:25:53.127275" level="INFO">${random_string} = Test_PSOPCSEO</msg>
+<var>${random_string}</var>
+<status status="PASS" start="2024-12-07T23:25:53.123209" elapsed="0.004066"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:25:53.130265" level="INFO">${created_topic_name} = TOPIC_Test_PSOPCSEO</msg>
+<var>${created_topic_name}</var>
+<arg>${TOPIC_PREFIX}${random_string}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-07T23:25:53.128215" elapsed="0.002050"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:25:53.133211" level="INFO">${GLOBAL_TOPIC_NAME} = TOPIC_Test_PSOPCSEO</msg>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<arg>${created_topic_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:25:53.131289" elapsed="0.001922"/>
+</kw>
+<kw name="Create New Topic" owner="topicsHelpers">
+<kw name="Input Topic Details" owner="topicsHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TOPIC_NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:53.137205" elapsed="0.280359"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:53.419589" level="INFO">Typing text 'TOPIC_Test_PSOPCSEO' into text field 'xpath=(//div[@class="settings-icon-input__content"]//input[1])[1]'.</msg>
+<arg>${TOPIC_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:53.418594" elapsed="1.181878"/>
+</kw>
+<arg>name=${name}</arg>
+<status status="PASS" start="2024-12-07T23:25:53.136205" elapsed="1.464267"/>
+</kw>
+<kw name="Submit Topic Form" owner="topicsHelpers">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:54.604499" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-12-07T23:25:54.604499" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-12-07T23:25:54.605516" level="INFO">Releasing special key ENTER.</msg>
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:54.602499" elapsed="0.170652"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:25:54.601503" elapsed="0.171648"/>
+</kw>
+<arg>${created_topic_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:53.134222" elapsed="1.640049"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:55.190439" level="INFO">Current page contains text 'Topic added successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:25:54.777349" elapsed="0.413090"/>
+</kw>
+<arg>Topic added successfully</arg>
+<status status="PASS" start="2024-12-07T23:25:54.774800" elapsed="0.416743"/>
+</kw>
+<kw name="Topic Should Exist In List" owner="topicsHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${topic_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.193468" elapsed="0.162011"/>
+</kw>
+<arg>${created_topic_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:55.192471" elapsed="0.164029"/>
+</kw>
+<doc>Test creating a topic for a category</doc>
+<tag>create</tag>
+<tag>topics</tag>
+<status status="PASS" start="2024-12-07T23:25:51.411203" elapsed="3.947028"/>
+</test>
+<test id="s1-t4" name="Edit Existing Topic" line="55">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:25:55.366284" level="INFO">${edited_topic_name} = Edited Topic</msg>
+<var>${edited_topic_name}</var>
+<arg>Edited Topic</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.365261" elapsed="0.001023"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-12-07T23:25:55.369314" level="INFO">${selected_topic} = TOPIC_Test_PSOPCSEO</msg>
+<var>${selected_topic}</var>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.368324" elapsed="0.001930"/>
+</kw>
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:55.374034" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'TOPIC_Test_PSOPCSEO')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.373001" elapsed="0.577061"/>
+</kw>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:25:55.371261" elapsed="0.579898"/>
+</kw>
+<kw name="Click Edit Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:55.960104" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'TOPIC_Test_PSOPCSEO')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.959148" elapsed="0.545341"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:55.958148" elapsed="0.546341"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:56.505542" elapsed="0.294366"/>
+</kw>
+<kw name="Click Edit Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:56.942837" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.118")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:56.804473" elapsed="0.138364"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:56.946885" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.118")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:25:56.943892" elapsed="0.163073"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:25:56.801474" elapsed="0.305491"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.957112" elapsed="1.150884"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:25:55.955161" elapsed="1.152835"/>
+</kw>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:25:55.953090" elapsed="1.154906"/>
+</kw>
+<kw name="Input Resource Details With Description" owner="categoriesHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:57.113076" elapsed="0.282698"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:57.399254" level="INFO">Clicking element 'xpath=//input[@id='name']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:57.399254" elapsed="0.562404"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:57.965702" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:25:57.965702" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:25:57.966709" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:25:57.966709" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:57.963695" elapsed="0.208026"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:58.173349" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:25:58.173349" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:25:58.173349" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:25:58.172267" elapsed="0.135928"/>
+</kw>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:25:57.396749" elapsed="0.912752"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:58.312139" level="INFO">Typing text 'Edited Topic' into text field 'xpath=//input[@id='name']'.</msg>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:58.310095" elapsed="0.950337"/>
+</kw>
+<kw name="Upload Resource Icon" owner="categoriesHelpers">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2024-12-07T23:25:59.275532" level="INFO" html="true">File '&lt;a href="file://C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\topic_icon.png"&gt;C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\topic_icon.png&lt;/a&gt;' exists.</msg>
+<arg>${PATH_TO_ICON}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2024-12-07T23:25:59.264495" elapsed="0.012090"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:59.277580" elapsed="0.274721"/>
+</kw>
+<kw name="UPLOAD FILE" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${UPLOAD_FILE_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:25:59.555002" elapsed="0.269802"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:25:59.826822" level="INFO">Sending C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\topic_icon.png to browser.</msg>
+<arg>${UPLOAD_FILE_INPUT}</arg>
+<arg>${FILE_NAME}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:25:59.825891" elapsed="0.381945"/>
+</kw>
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
+<arg>${UPLOAD_CAT_ICON_INPUT}</arg>
+<arg>${PATH_TO_ICON}</arg>
+<status status="PASS" start="2024-12-07T23:25:59.552906" elapsed="0.655788"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Drag and drop your icon</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:00.209526" elapsed="10.189096"/>
+</kw>
+<arg>${path_to_icon}</arg>
+<status status="PASS" start="2024-12-07T23:25:59.262409" elapsed="11.136213"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:10.401686" level="INFO">Clicking element 'xpath=//textarea[@id='description']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:10.400687" elapsed="0.502055"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:10.905368" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:26:10.905368" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:26:10.906345" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:26:10.906345" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:10.903295" elapsed="0.154651"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:11.062069" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:26:11.062069" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:26:11.062069" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:11.060015" elapsed="0.133289"/>
+</kw>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:26:10.399691" elapsed="0.794698"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:11.196397" level="INFO">Typing text 'Updated Topic Description' into text field 'xpath=//textarea[@id='description']'.</msg>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<arg>${description}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:11.195401" elapsed="1.095951"/>
+</kw>
+<arg>name=${edited_topic_name}</arg>
+<arg>path_to_icon=${PATH_TO_TOPIC_ICON}</arg>
+<arg>description=Updated Topic Description</arg>
+<status status="PASS" start="2024-12-07T23:25:57.110046" elapsed="15.181306"/>
+</kw>
+<kw name="Submit Edit Resource Form" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:12.293376" level="INFO">Clicking element 'xpath=//button[contains(text(),'Save')]'.</msg>
+<arg>xpath=//button[contains(text(),'Save')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:12.293376" elapsed="0.454094"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:12.292420" elapsed="0.455714"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:13.290966" level="INFO">Current page contains text 'Topic updated successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:26:12.750951" elapsed="0.540015"/>
+</kw>
+<arg>Topic updated successfully</arg>
+<status status="PASS" start="2024-12-07T23:26:12.749323" elapsed="0.542670"/>
+</kw>
+<kw name="Certification Should Exist In List" owner="certificationsHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${cert_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:13.296007" elapsed="0.162190"/>
+</kw>
+<arg>${edited_topic_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:13.293997" elapsed="0.164200"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:26:13.461598" level="INFO">${GLOBAL_TOPIC_NAME} = Edited Topic</msg>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<arg>${edited_topic_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:26:13.460635" elapsed="0.002107"/>
+</kw>
+<doc>Test the editing of an existing topic</doc>
+<tag>edit</tag>
+<tag>topics</tag>
+<status status="PASS" start="2024-12-07T23:25:55.363263" elapsed="18.101124"/>
+</test>
+<test id="s1-t5" name="Create Certification For Topic" line="68">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-12-07T23:26:13.471422" level="INFO">${edited_topic_name} = Edited Topic</msg>
+<var>${edited_topic_name}</var>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-12-07T23:26:13.470429" elapsed="0.001960"/>
+</kw>
+<kw name="Select Topic To Create Certificate" owner="topicsHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:13.478190" level="INFO">Clicking element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Topic')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${topic_name}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:13.476195" elapsed="0.596559"/>
+</kw>
+<arg>${edited_topic_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:13.474244" elapsed="0.599318"/>
+</kw>
+<kw name="Click Add New Certification Button" owner="certificationsHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_CERT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:14.077592" elapsed="0.513592"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:14.594828" level="INFO">Clicking element 'xpath=(//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[3])[1]'.</msg>
+<arg>${ADD_CERT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:14.592822" elapsed="0.570356"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:14.074608" elapsed="1.089596"/>
+</kw>
+<kw name="Generate Random String" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-12-07T23:26:15.170973" level="INFO">${random} = KWASZGAW</msg>
+<var>${random}</var>
+<arg>''.join([chr(random.randint(65, 90)) for _ in range(8)])</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-12-07T23:26:15.168662" elapsed="0.002311"/>
+</kw>
+<return>
+<value>Test_${random}</value>
+<status status="PASS" start="2024-12-07T23:26:15.172092" elapsed="0.000859"/>
+</return>
+<msg time="2024-12-07T23:26:15.174636" level="INFO">${random_string} = Test_KWASZGAW</msg>
+<var>${random_string}</var>
+<status status="PASS" start="2024-12-07T23:26:15.166213" elapsed="0.009066"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:26:15.179094" level="INFO">${created_certificate_name} = CERT_Test_KWASZGAW</msg>
+<var>${created_certificate_name}</var>
+<arg>${CERTIF_PREFIX}${random_string}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-07T23:26:15.176742" elapsed="0.002455"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:26:15.182888" level="INFO">${GLOBAL_CERTIFICATION_NAME} = CERT_Test_KWASZGAW</msg>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<arg>${created_certificate_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:26:15.180634" elapsed="0.002581"/>
+</kw>
+<kw name="Create New Certificate" owner="certificationsHelpers">
+<kw name="Input Certification Details" owner="certificationsHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CERT_NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:15.188577" elapsed="0.274095"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:15.463683" level="INFO">Typing text 'CERT_Test_KWASZGAW' into text field 'xpath=(//div[@class="settings-icon-input__content"]//input[1])[1]'.</msg>
+<arg>${CERT_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:15.462672" elapsed="0.698833"/>
+</kw>
+<arg>name=${name}</arg>
+<status status="PASS" start="2024-12-07T23:26:15.187026" elapsed="0.975063"/>
+</kw>
+<kw name="Submit Certification Form" owner="certificationsHelpers">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:16.165169" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-12-07T23:26:16.166117" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-12-07T23:26:16.166117" level="INFO">Releasing special key ENTER.</msg>
+<arg>none</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.164169" elapsed="0.165864"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:16.162089" elapsed="0.168975"/>
+</kw>
+<arg>${created_certificate_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:15.184728" elapsed="1.147332"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:16.729426" level="INFO">Current page contains text 'Certificate added successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.335059" elapsed="0.394367"/>
+</kw>
+<arg>Certificate added successfully</arg>
+<status status="PASS" start="2024-12-07T23:26:16.333071" elapsed="0.397393"/>
+</kw>
+<kw name="Certification Should Exist In List" owner="certificationsHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${cert_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.732895" elapsed="0.157297"/>
+</kw>
+<arg>${created_certificate_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:16.731692" elapsed="0.159596"/>
+</kw>
+<doc>Test creating a certification for a topic</doc>
+<tag>certifications</tag>
+<tag>create</tag>
+<status status="PASS" start="2024-12-07T23:26:13.468445" elapsed="3.424778"/>
+</test>
+<test id="s1-t6" name="Edit Existing Certification" line="81">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:26:16.902810" level="INFO">${edited_certification_name} = Edited Certification</msg>
+<var>${edited_certification_name}</var>
+<arg>Edited Certification</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.901817" elapsed="0.000993"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2024-12-07T23:26:16.905816" level="INFO">${selected_certificate} = CERT_Test_KWASZGAW</msg>
+<var>${selected_certificate}</var>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.904816" elapsed="0.001000"/>
+</kw>
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:16.913374" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'CERT_Test_KWASZGAW')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:16.911332" elapsed="0.574387"/>
+</kw>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:16.908798" elapsed="0.577441"/>
+</kw>
+<kw name="Click Edit Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:17.494309" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'CERT_Test_KWASZGAW')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:17.492259" elapsed="0.563749"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:17.490256" elapsed="0.566783"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:18.058036" elapsed="0.301468"/>
+</kw>
+<kw name="Click Edit Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:18.497844" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.143")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:18.362008" elapsed="0.135836"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:18.501919" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.143")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:26:18.498920" elapsed="0.150546"/>
+</kw>
+<arg>${category_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:18.361009" elapsed="0.289542"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:26:17.489258" elapsed="1.162239"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${category_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${category_name}')]//following::i[@class='edit'][1]</arg>
+<arg>AND</arg>
+<arg>Click Edit Using JS</arg>
+<arg>${category_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:26:17.488256" elapsed="1.163241"/>
+</kw>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:17.487257" elapsed="1.165241"/>
+</kw>
+<kw name="Input Resource Details With Description" owner="categoriesHelpers">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:18.656249" elapsed="0.283054"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:18.945076" level="INFO">Clicking element 'xpath=//input[@id='name']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:18.942916" elapsed="0.523535"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:19.469973" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:26:19.469973" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:26:19.471003" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:26:19.471003" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:19.467482" elapsed="0.154869"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:19.623888" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:26:19.623888" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:26:19.624884" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:19.622870" elapsed="0.142379"/>
+</kw>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:26:18.940961" elapsed="0.824874"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:19.768919" level="INFO">Typing text 'Edited Certification' into text field 'xpath=//input[@id='name']'.</msg>
+<arg>${CATEGORY_EDIT_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:19.767916" elapsed="0.815109"/>
+</kw>
+<kw name="Upload Resource Icon" owner="categoriesHelpers">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2024-12-07T23:26:20.584561" level="INFO" html="true">File '&lt;a href="file://C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\certif_icon.png"&gt;C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\certif_icon.png&lt;/a&gt;' exists.</msg>
+<arg>${PATH_TO_ICON}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2024-12-07T23:26:20.583544" elapsed="0.001017"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:20.584561" elapsed="0.269453"/>
+</kw>
+<kw name="UPLOAD FILE" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${UPLOAD_FILE_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:20.860590" elapsed="0.284554"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:21.147314" level="INFO">Sending C:\Users\Hp\stv3-test-auto\STV3_TEST\ressources\VARIABLES\certif_icon.png to browser.</msg>
+<arg>${UPLOAD_FILE_INPUT}</arg>
+<arg>${FILE_NAME}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:21.146212" elapsed="0.356444"/>
+</kw>
+<arg>${CAT_ICON_UPLOAD_FIELD}</arg>
+<arg>${UPLOAD_CAT_ICON_INPUT}</arg>
+<arg>${PATH_TO_ICON}</arg>
+<status status="PASS" start="2024-12-07T23:26:20.855594" elapsed="0.647604"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Drag and drop your icon</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:21.504251" elapsed="10.179641"/>
+</kw>
+<arg>${path_to_icon}</arg>
+<status status="PASS" start="2024-12-07T23:26:20.583544" elapsed="11.101414"/>
+</kw>
+<kw name="Empty Field Content" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:31.687942" level="INFO">Clicking element 'xpath=//textarea[@id='description']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:31.686940" elapsed="0.501383"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:32.190351" level="INFO">Sending key(s) ('CTRL+a',) to page.</msg>
+<msg time="2024-12-07T23:26:32.191367" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2024-12-07T23:26:32.191367" level="INFO">Sending key a</msg>
+<msg time="2024-12-07T23:26:32.191367" level="INFO">Releasing special key CONTROL.</msg>
+<arg>none</arg>
+<arg>CTRL+a</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:32.189349" elapsed="0.142040"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:32.333528" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg time="2024-12-07T23:26:32.333528" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg time="2024-12-07T23:26:32.334527" level="INFO">Releasing special key DELETE.</msg>
+<arg>none</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-07T23:26:32.332534" elapsed="0.134232"/>
+</kw>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<status status="PASS" start="2024-12-07T23:26:31.685940" elapsed="0.781861"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:32.469816" level="INFO">Typing text 'Updated Certification Description' into text field 'xpath=//textarea[@id='description']'.</msg>
+<arg>${CATEGORY_DESC_INPUT}</arg>
+<arg>${description}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:32.468819" elapsed="0.910136"/>
+</kw>
+<arg>name=${edited_certification_name}</arg>
+<arg>path_to_icon=${PATH_TO_CERT_ICON}</arg>
+<arg>description=Updated Certification Description</arg>
+<status status="PASS" start="2024-12-07T23:26:18.654497" elapsed="14.724458"/>
+</kw>
+<kw name="Submit Edit Resource Form" owner="categoriesHelpers">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:33.383042" level="INFO">Clicking element 'xpath=//button[contains(text(),'Save')]'.</msg>
+<arg>xpath=//button[contains(text(),'Save')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:33.382049" elapsed="0.512171"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:33.381047" elapsed="0.513173"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:34.510162" level="INFO">Current page contains text 'Certificate updated successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:26:33.898650" elapsed="0.612032"/>
+</kw>
+<arg>Certificate updated successfully</arg>
+<status status="PASS" start="2024-12-07T23:26:33.896253" elapsed="0.614429"/>
+</kw>
+<kw name="Certification Should Exist In List" owner="certificationsHelpers">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${cert_name}')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:34.513722" elapsed="0.153748"/>
+</kw>
+<arg>${edited_certification_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:34.512851" elapsed="0.155651"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-07T23:26:34.671499" level="INFO">${GLOBAL_CERTIFICATION_NAME} = Edited Certification</msg>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<arg>${edited_certification_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-07T23:26:34.669500" elapsed="0.002995"/>
+</kw>
+<doc>Test the editing of an existing certificate</doc>
+<tag>cert</tag>
+<tag>edit</tag>
+<status status="PASS" start="2024-12-07T23:26:16.898830" elapsed="17.776030"/>
+</test>
+<test id="s1-t7" name="Delete A Certification" line="94">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:34.682875" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Certification')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:34.681851" elapsed="0.561492"/>
+</kw>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:34.680862" elapsed="0.563510"/>
+</kw>
+<kw name="Click Delete Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:35.257268" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Certification')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:35.255264" elapsed="0.579431"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:35.252285" elapsed="0.583496"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:35.836784" elapsed="0.308726"/>
+</kw>
+<kw name="Click Delete Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:36.286480" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.162")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:36.147591" elapsed="0.138889"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:36.289488" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.162")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:26:36.287483" elapsed="0.150824"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:36.146602" elapsed="0.292783"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:26:35.250698" elapsed="1.188687"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:26:35.248429" elapsed="1.191956"/>
+</kw>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:35.246442" elapsed="1.194944"/>
+</kw>
+<kw name="Confirm Delete Action" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:36.445444" elapsed="0.292314"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-12-07T23:26:36.739247" elapsed="0.432485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:37.174579" level="INFO">Clicking element 'xpath=//input[@id='delete-confirmation']'.</msg>
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:37.173543" elapsed="0.536116"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:37.712712" level="INFO">Clicking element 'xpath=//button[contains(text(),'Delete')]'.</msg>
+<arg>${MODAL_DELETE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:37.710717" elapsed="0.586481"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:36.444381" elapsed="1.853743"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:38.719554" level="INFO">Current page contains text 'Certificate deleted successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:26:38.301206" elapsed="0.418348"/>
+</kw>
+<arg>Certificate deleted successfully</arg>
+<status status="PASS" start="2024-12-07T23:26:38.299568" elapsed="0.421039"/>
+</kw>
+<kw name="Category Should Not Exist In List" owner="categoriesHelpers">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:38.723600" elapsed="10.169676"/>
+</kw>
+<arg>${GLOBAL_CERTIFICATION_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:38.721654" elapsed="10.171622"/>
+</kw>
+<doc>Test deleting a certification</doc>
+<tag>certificates</tag>
+<tag>delete</tag>
+<status status="PASS" start="2024-12-07T23:26:34.678920" elapsed="14.215412"/>
+</test>
+<test id="s1-t8" name="Delete A Topic" line="103">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:48.902324" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Topic')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:48.901326" elapsed="0.551812"/>
+</kw>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:48.900326" elapsed="0.553425"/>
+</kw>
+<kw name="Click Delete Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:49.462770" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Topic')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:49.461773" elapsed="0.555436"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:49.459781" elapsed="0.557428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:50.018261" elapsed="0.287693"/>
+</kw>
+<kw name="Click Delete Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:50.448886" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.173")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:50.310027" elapsed="0.138859"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:50.452996" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.173")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:26:50.450021" elapsed="0.161140"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:26:50.307503" elapsed="0.303658"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:26:49.459781" elapsed="1.152431"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:26:49.457787" elapsed="1.155422"/>
+</kw>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:49.455786" elapsed="1.157961"/>
+</kw>
+<kw name="Confirm Delete Action" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:26:50.617388" elapsed="0.258085"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-12-07T23:26:50.875473" elapsed="0.349754"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:51.226248" level="INFO">Clicking element 'xpath=//input[@id='delete-confirmation']'.</msg>
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:51.225227" elapsed="0.365551"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:51.591319" level="INFO">Clicking element 'xpath=//button[contains(text(),'Delete')]'.</msg>
+<arg>${MODAL_DELETE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:26:51.591319" elapsed="0.463185"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:26:50.615368" elapsed="1.440163"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:26:52.457400" level="INFO">Current page contains text 'Topic deleted successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:26:52.057534" elapsed="0.400405"/>
+</kw>
+<arg>Topic deleted successfully</arg>
+<status status="PASS" start="2024-12-07T23:26:52.056536" elapsed="0.402475"/>
+</kw>
+<kw name="Topic Should Not Exist In List" owner="topicsHelpers">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${topic_name}')]</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:26:52.461677" elapsed="10.176817"/>
+</kw>
+<arg>${GLOBAL_TOPIC_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:26:52.460671" elapsed="10.177823"/>
+</kw>
+<doc>Test deleting a topic</doc>
+<tag>delete</tag>
+<tag>topics</tag>
+<status status="PASS" start="2024-12-07T23:26:48.898332" elapsed="13.741175"/>
+</test>
+<test id="s1-t9" name="Delete A Category" line="112">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:02.644506" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Category')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:27:02.643507" elapsed="0.517176"/>
+</kw>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:27:02.642506" elapsed="0.518177"/>
+</kw>
+<kw name="Click Delete Resource Button" owner="common">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Keywords" owner="BuiltIn">
+<kw name="Select Resource" owner="common">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:03.165711" level="INFO">Simulating Mouse Over on element 'xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'Edited Category')]'.</msg>
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:27:03.165711" elapsed="0.509630"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:27:03.163701" elapsed="0.512785"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:27:03.677570" elapsed="0.283783"/>
+</kw>
+<kw name="Click Delete Using JS" owner="common">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:04.099958" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.185")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:27:03.964140" elapsed="0.136413"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:04.102596" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="56adffc4f69ce0608635f67ffb8018d5", element="f.8509D6C815CE9A25F29B9663A628115B.d.DC2A6F561B64E5D71D4FBDEFED3FDADB.e.185")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-12-07T23:27:04.100553" elapsed="0.154227"/>
+</kw>
+<arg>${resource_name}</arg>
+<status status="PASS" start="2024-12-07T23:27:03.961993" elapsed="0.293383"/>
+</kw>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-12-07T23:27:03.162700" elapsed="1.093704"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Run Keywords</arg>
+<arg>Select Resource</arg>
+<arg>${resource_name}</arg>
+<arg>AND</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//div[@class='settings-icon-input__content']//p[contains(text(),'${resource_name}')]//following::i[@class='delete'][1]</arg>
+<arg>AND</arg>
+<arg>Click Delete Using JS</arg>
+<arg>${resource_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-12-07T23:27:03.162700" elapsed="1.093704"/>
+</kw>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:27:03.161698" elapsed="1.095784"/>
+</kw>
+<kw name="Confirm Delete Action" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-07T23:27:04.260407" elapsed="0.274397"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-12-07T23:27:04.535410" elapsed="0.395958"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:04.933420" level="INFO">Clicking element 'xpath=//input[@id='delete-confirmation']'.</msg>
+<arg>${DELETE_CONFIRMATION_CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:27:04.932325" elapsed="0.494709"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:05.429063" level="INFO">Clicking element 'xpath=//button[contains(text(),'Delete')]'.</msg>
+<arg>${MODAL_DELETE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-07T23:27:05.428076" elapsed="0.497781"/>
+</kw>
+<status status="PASS" start="2024-12-07T23:27:04.259462" elapsed="1.667341"/>
+</kw>
+<kw name="Success Message Should Be Visible" owner="common">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-07T23:27:06.292188" level="INFO">Current page contains text 'Category deleted successfully'.</msg>
+<arg>${expected_message}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-12-07T23:27:05.929237" elapsed="0.362951"/>
+</kw>
+<arg>Category deleted successfully</arg>
+<status status="PASS" start="2024-12-07T23:27:05.927808" elapsed="0.364380"/>
+</kw>
+<kw name="Category Should Not Exist In List" owner="categoriesHelpers">
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@class="settings-icon-input__content"]//p[contains(text(),'${category_name}')]</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-07T23:27:06.295268" elapsed="10.130922"/>
+</kw>
+<arg>${GLOBAL_CATEGORY_NAME}</arg>
+<status status="PASS" start="2024-12-07T23:27:06.294270" elapsed="10.131920"/>
+</kw>
+<doc>Test deleting a Category</doc>
+<tag>categories</tag>
+<tag>delete</tag>
+<status status="PASS" start="2024-12-07T23:27:02.641507" elapsed="13.785737"/>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-11-27T18:09:31.589294" elapsed="2.355765"/>
+<status status="PASS" start="2024-12-07T23:27:16.433309" elapsed="2.457230"/>
 </kw>
-<doc>Test suite for required documents creation and filters check</doc>
-<status status="FAIL" start="2024-11-27T18:07:18.885627" elapsed="135.059432"/>
+<doc>Test suite for Categories and Certifications management</doc>
+<status status="PASS" start="2024-12-07T23:24:43.371603" elapsed="155.518936"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="4" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">create</stat>
-<stat pass="0" fail="1" skip="0">DOCUMENTS</stat>
-<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="3" fail="0" skip="0">categories</stat>
+<stat pass="1" fail="0" skip="0">cert</stat>
+<stat pass="1" fail="0" skip="0">certificates</stat>
+<stat pass="1" fail="0" skip="0">certifications</stat>
+<stat pass="3" fail="0" skip="0">create</stat>
+<stat pass="3" fail="0" skip="0">delete</stat>
+<stat pass="3" fail="0" skip="0">edit</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="3" fail="0" skip="0">topics</stat>
 </tag>
 <suite>
-<stat pass="1" fail="4" skip="0" id="s1" name="Required Documents Suite">Required Documents Suite</stat>
+<stat pass="9" fail="0" skip="0" id="s1" name="Categories-Suite">Categories-Suite</stat>
 </suite>
 </statistics>
 <errors>

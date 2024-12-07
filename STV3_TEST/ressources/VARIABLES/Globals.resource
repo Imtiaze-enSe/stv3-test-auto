@@ -9,7 +9,7 @@ ${LOGIN_BUTTON}                   css=button[type='submit']
 ${ERROR_MESSAGE}                  css=.alert-error
 ${LOADING_SPINNER}                css=.loading-spinner
 ${BROWSER}                        chrome
-${URL}                            https://stv3ca-prod.netlify.app
+${URL}                            https://preprodenv.safetytracker.app
 ${VALID_USERNAME}                 supadmin@imense.net
 ${VALID_PASSWORD}                  P@ssw0rd!
 ${TIMEOUT}                         10s
