@@ -1,7 +1,7 @@
 *** Variables ***
 ${REQUIRED_DOC_TAB}                            xpath=//div[contains(text(),'Required documents')]
 ${REQUIRED_DOC_PAGE_URL}                       ${URL}/competence-settings?activeTab=2
-${URL}                                         https://stv3ca-prod.netlify.app
+${URL}                                         https://preprodenv.safetytracker.app
 ${ADD_NEW_DOC_BTN}                             xpath=//button[@class='add-btn']
 ${ADD_DOC_MODAL}                               xpath=//body/div[@id='modal']/div[1]/div[2]/div[1]/div[1]
 ${DOC_TITLE_INPUT}                             xpath=//input[@placeholder="Enter document title"]
