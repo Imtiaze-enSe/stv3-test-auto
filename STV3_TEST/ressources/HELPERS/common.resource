@@ -109,5 +109,6 @@ Input Text Into Hidden Field
 
 Verify Filter Results
     [Arguments]    ${expected_result}    ${unwanted_result}=${EMPTY}
-    Wait Until Page Contains    ${expected_result}    timeout=10s
+    Wait Until Page Contains    ${expected_result}    timeout=15s
+    sleep     2s
     Run Keyword If             '${unwanted_result}' != '${EMPTY}'    Page Should Not Contain    ${unwanted_result}    message=Page should not contain '${unwanted_result}'

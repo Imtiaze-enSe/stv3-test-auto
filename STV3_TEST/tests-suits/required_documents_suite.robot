@@ -32,11 +32,11 @@ Test Search Filter
 Test Document Type Filter
     Select Document Type     Internal
     Verify Filter Results    Internal     External
-    # Sleep    1s
+    Sleep    1s
     Reset Filters
     Select Document Type     External
     Verify Filter Results    External     Internal
-    # Sleep    1s
+    Sleep    1s
     Reset Filters
 
 Test Combined Filters

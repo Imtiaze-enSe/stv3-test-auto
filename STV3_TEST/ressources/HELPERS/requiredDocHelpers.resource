@@ -88,7 +88,7 @@ Select Document Type
     Wait Until Element Is Visible          ${option_locator}     timeout=10s
     log                                    ${option_locator}
     Click Element                          ${option_locator}
-    Click Button                           ${APPLY_FILTER_BUTTON}
+    Click Button                           xpath=//form[1]/div[1]/div[1]/div[3]/button[1]
 
 Reset Filters
     Click Button                             ${RESET_FILTER_BUTTON}
