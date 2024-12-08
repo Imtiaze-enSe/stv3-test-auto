@@ -21,24 +21,26 @@ Navigate to users page
     Click Element                           ${SIDEBAR_CROSS_ICON}  
 
 Select a User From the List
-    [Arguments]                         ${USERS_SEARCH_BAR}        ${user_name}
-    Search for a User                   ${USERS_SEARCH_BAR}         ${user_name}
-    Click Element                       xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${user_name}')]  
+    [Arguments]                         ${USERS_SEARCH_BAR}        ${user_name}     ${APLLY_SEARCH_BTN}
+    Search for a User                   ${USERS_SEARCH_BAR}         ${user_name}    ${APLLY_SEARCH_BTN}
+    Click Element                       xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/p[1][contains(text(),"${user_name}")]  
     Wait Until Page Contains Element    ${USER_PROFILE_TAB}
 Search for a User
-    [Arguments]                                    ${USERS_SEARCH_BAR}    ${searched_user}  
+    [Arguments]                                    ${USERS_SEARCH_BAR}    ${searched_user}      ${APLLY_SEARCH_BTN}
     Input Text                                     ${USERS_SEARCH_BAR}    ${searched_user}  
     Click Element                                  ${APLLY_SEARCH_BTN}  
-    Wait Until Element Is Visible                  xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/p[1][contains(text(),'${searched_user}')]
+    Wait Until Element Is Visible                  xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/p[1][contains(text(),"${searched_user}")]
 
 Go to Required Document Page
     Wait Until Element Is Visible                   ${REQUIRED_DOC_LINK}
     Click Element                                   ${REQUIRED_DOC_LINK}
+    Scroll Element Into View                        ${REQUIRED_DOC_PAGE_TITLE}
     Wait Until Element Is Visible                   ${REQUIRED_DOC_PAGE_TITLE}
 
 Go to Required Certificate Page
     Wait Until Element Is Visible                   ${REQUIRED_CERTIFICATE_LINK}
     Click Element                                   ${REQUIRED_CERTIFICATE_LINK}
+    Scroll Element Into View                        ${REQUIRED_CERTIFICATE_PAGE}
     Wait Until Element Is Visible                   ${REQUIRED_CERTIFICATE_PAGE}
 Select Current Day
     ${today}=    Get Current Date       

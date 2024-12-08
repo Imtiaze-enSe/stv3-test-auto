@@ -19,8 +19,9 @@ Create a New Document
     Click Add New Doc button
     Fill out the Addition Form               ${created_document_name}
     Submit the Form
-    Success Message Should Be Visible        Document has been added successfully
     Set Global Variable                      ${GLOBAL_DOC_NAME}            ${created_document_name}
+    Success Message Should Be Visible        Document added successfully
+    
 
 Test Search Filter
     ${search_term}=    Get Variable Value    ${GLOBAL_DOC_NAME}
