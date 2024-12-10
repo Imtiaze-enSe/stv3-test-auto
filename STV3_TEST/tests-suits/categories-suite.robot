@@ -1,11 +1,11 @@
 *** Settings ***
 Documentation     Test suite for Categories and Certifications management
 Library           SeleniumLibrary
-Resource          ressources/HELPERS/categoriesHelpers.resource
-Resource          ressources/HELPERS/certificationsHelpers.resource
-Resource          ressources/HELPERS/topicsHelpers.resource
-Resource          ressources/HELPERS/common.resource
-Resource          ressources/VARIABLES/Globals.resource
+Resource          ${CURDIR}/../ressources/HELPERS/categoriesHelpers.resource
+Resource          ${CURDIR}/../ressources/HELPERS/certificationsHelpers.resource
+Resource          ${CURDIR}/../ressources/HELPERS/topicsHelpers.resource
+Resource          ${CURDIR}/../ressources/HELPERS/common.resource
+Resource          ${CURDIR}/../ressources/VARIABLES/Globals.resource
 Suite Setup       Open Browser To Application
 Suite Teardown    Close All Browsers
 
