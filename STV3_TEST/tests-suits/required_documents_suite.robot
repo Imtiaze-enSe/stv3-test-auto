@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation     Test suite for required documents creation and filters check
 Library           SeleniumLibrary
-Resource          ../ressources/HELPERS/requiredDocHelpers.resource
-Resource          ../ressources/HELPERS/common.resource
-Resource          ../ressources/VARIABLES/Globals.resource
+Resource          ${EXECDIR}/ressources/HELPERS/requiredDocHelpers.resource
+Resource          ${EXECDIR}/ressources/HELPERS/common.resource
+Resource          ${EXECDIR}/ressources/VARIABLES/Globals.resource
 Suite Setup       Open Browser To Application
 Suite Teardown    Close All Browsers
 
