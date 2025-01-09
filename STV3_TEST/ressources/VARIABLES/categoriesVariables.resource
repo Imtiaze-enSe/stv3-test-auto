@@ -1,6 +1,6 @@
 *** Variables ***
 # Locators    
-${SIDEBAR_CATEGORIES_SETTINGS_LINK}    xpath=//p[contains(text(),'Competence')]/following::i[@class="sidebar__header-settings-sublink"]  
+${SIDEBAR_CATEGORIES_SETTINGS_LINK}    xpath=//p[contains(text(),'Competency')]/following::i[@class="sidebar__header-settings-sublink"]  
 ${ADD_CATEGORY_BUTTON}                 xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[3]
 ${CATEGORY_NAME_INPUT}                 xpath=(//div[@class="settings-icon-input__content"]//input[1])[1]
 ${CATEGORY_EDIT_NAME_INPUT}            xpath=//input[@id='name']

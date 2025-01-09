@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 Resource          ${CURDIR}/../ressources/HELPERS/categoriesHelpers.resource
 Resource          ${CURDIR}/../ressources/HELPERS/certificationsHelpers.resource
 Resource          ${CURDIR}/../ressources/HELPERS/topicsHelpers.resource
-Resource          ${CURDIR}/../ressources/HELPERS/common.resource
+Resource          ../ressources/HELPERS/common.resource
 Resource          ${CURDIR}/../ressources/VARIABLES/Globals.resource
 Suite Setup       Open Browser To Application
 Suite Teardown    Close All Browsers
@@ -119,5 +119,4 @@ Delete A Category
     Category Should Not Exist In List                      ${GLOBAL_CATEGORY_NAME}
 
 
-*** Keywords ***
 

@@ -13,7 +13,7 @@ ${URL}                            https://preprodenv.safetytracker.app
 ${VALID_USERNAME}                 supadmin@imense.net
 ${VALID_PASSWORD}                  P@ssw0rd!
 ${TIMEOUT}                         10s
-${SIDEBAR_COMPETENCE_LINK}        xpath=//p[contains(text(),'Competence')]
+${SIDEBAR_COMPETENCE_LINK}        xpath=//p[contains(text(),'Competency')]
 ${SIDEBAR_CROSS_ICON}             xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]
 ${DELETE_BUTTON}                  xpath=//body/div[@id='root']/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[2]/*[1]
 ${DELETE_CONFIRMATION_MODAL}      xpath=//div[@class="delete-modal__header-text"]//following::p[contains(text(), 'Delete')]
