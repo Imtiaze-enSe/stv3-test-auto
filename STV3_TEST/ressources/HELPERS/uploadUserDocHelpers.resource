@@ -23,13 +23,13 @@ Navigate to users page
 Select a User From the List
     [Arguments]                         ${USERS_SEARCH_BAR}        ${user_name}     ${APLLY_SEARCH_BTN}
     Search for a User                   ${USERS_SEARCH_BAR}         ${user_name}    ${APLLY_SEARCH_BTN}
-    Click Element                       xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/p[1][contains(text(),"${user_name}")]  
+    Click Element                       xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/div[1]/p[1][contains(text(),"${user_name}")]  
     Wait Until Page Contains Element    ${USER_PROFILE_TAB}
 Search for a User
     [Arguments]                                    ${USERS_SEARCH_BAR}    ${searched_user}      ${APLLY_SEARCH_BTN}
     Input Text                                     ${USERS_SEARCH_BAR}    ${searched_user}  
     Click Element                                  ${APLLY_SEARCH_BTN}  
-    Wait Until Element Is Visible                  xpath=//tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/p[1][contains(text(),"${searched_user}")]
+    Wait Until Element Is Visible                  xpath=//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[1]/div[1]/div[1]/p[1][contains(text(),"${searched_user}")]
 
 Go to Required Document Page
     Wait Until Element Is Visible                   ${REQUIRED_DOC_LINK}
