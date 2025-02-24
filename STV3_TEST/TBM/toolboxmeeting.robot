@@ -183,7 +183,7 @@ ToolBoxMeetings Upload File
         Select Publication Now
         Select Assign To Users Of Project
         Select All Users
-        Attach File    C:/Users/ShiedaMimo/Desktop/STV/TBM/Automated Tests/stv3-test-auto/STV3_TEST/TBM/Upload-Test/STV3-687.csv
+        Attach File    /Upload-Test/STV3-687.csv
         Sleep    1s
         Click Next Step Button
         Close Browser
