@@ -1,0 +1,27 @@
+Action,Data,Expected Result,Call test,Call test parameters
+,,,STV3-672,
+Click ToolBoxMeetings Module.,,User Sees Dashboard of ToolBoxMeeting Module,,
+Press Button Add new.,,User goes to Add New ToolBoxMeeting Formulaire.,,
+"Enter Title.
+Select Date.
+Select Publication Date.","Title : TBM TC1.
+Date : 31/01/2025
+Publication Date : NOW.",Inputs are filled with Data Provided.,,
+"Press Assign To DropDown.
+Press Select Company DropDown.
+Press Select All Users.","Assign to : Users Of Company.
+Company : Biowanze",All Required Inputs Are Filled.,,
+Press Next Step.,,User Sees ToolBoxMeeting Questions Formulaire,,
+Click Select Passing Score DropDown.,Passing Score : 70%,The DropDown Show the selected Passing Score.,,
+Press Add new Question.,,An Input where to write your Question and the answer pops-up.,,
+"Write Question In the input Provided.
+Select Answer for the Question.","Question : ""Test Case 1 Passed?""
+Answer  : Yes",The input is filled and the selected and answer is now Green.,,
+Press Add new Question.,,An Input where to write your Question and the answer pops-up.,,
+"Write Question In the input Provided.
+Select Answer for the Question.","Question : ""Test Case 1 Wrong?""
+Answer  : no",The input is filled and the selected and answer is now Green.,,
+"Click Select Reminders DropDown.
+Click Select Reminder Repetition Loop DropDown.","Reminders : 3days Left.
+Repetition Loop : 12hours.",The DropDown Filled Shows the data provided.,,
+Click Submit.,,"User Get redirected to ToolBoxMeeting DashBoard with a pop-up in down right of screen ""ToolBoxMeeting has been Created successfully"" and the recent TBM in dashboard is one just Created",,

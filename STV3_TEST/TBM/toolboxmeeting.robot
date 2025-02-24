@@ -22,7 +22,7 @@ ToolBoxMeetings With Quizz
     
     Click Toolbox Meetings Module
     Click Add New TBM Button
-    Input Title Details   This is an Automated Test
+    Input Title Details   This is an Automated Test 2.0
     Select Random Date From Datepicker
     Select Publication Now
     Select Assign To Users Of Company
@@ -64,9 +64,9 @@ ToolBoxMeetings ApplyFilter Test
     
     Click Toolbox Meetings Module
     Open Filter Panel
-    Select Date Filter    today
-    Select Status Filter    scheduled
-    Set Participation Range    20
+    Select Date Filter    this_year
+    Select Status Filter    overdue
+    Set Participation Range    5
     Apply Filters
     Sleep    3s
 
@@ -183,6 +183,7 @@ ToolBoxMeetings Upload File
         Select Publication Now
         Select Assign To Users Of Project
         Select All Users
-        Attach File    C:\\Users\\ShiedaMimo\\Downloads\\Tests\\STV3-687.csv
+        Attach File    C:/Users/ShiedaMimo/Desktop/STV/TBM/Automated Tests/stv3-test-auto/STV3_TEST/TBM/Upload-Test/STV3-687.csv
+        Sleep    1s
         Click Next Step Button
         Close Browser
