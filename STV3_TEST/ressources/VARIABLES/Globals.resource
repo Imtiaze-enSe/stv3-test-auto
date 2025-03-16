@@ -11,7 +11,7 @@ ${LOADING_SPINNER}                css=.loading-spinner
 ${BROWSER}                        chrome
 ${URL}                            https://preprodenv.safetytracker.app
 ${VALID_USERNAME}                 supadmin@imense.net
-${VALID_PASSWORD}                  P@ssw0rd!
+${VALID_PASSWORD}                 P@ssw0rd!
 ${TIMEOUT}                         10s
 ${SIDEBAR_COMPETENCE_LINK}        xpath=//p[contains(text(),'Competency')]
 ${SIDEBAR_CROSS_ICON}             xpath=//body/div[@id='root']/div[1]/div[1]/div[1]/div[1]/div[1]
